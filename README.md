@@ -1,2 +1,75 @@
-# x051130x.github.io
-Space Creator EX服务器官网仓库
+# SCEX Creator EX
+
+[toc]
+
+## 简介
+
+某不知名 Minecraft 服务器, 现长期开设基于 Create: Above and Beyond 整合包(下文简称为CAB)的服务器.
+
+服务器创建于2020年6月，经几次大修后于2022年7月基本定型，致力于建造一个高自由度的 Minecraft 服务器.
+
+## 联系方式
+
+QQ 群聊: 362344872
+
+服务器的所有消息都会在此群内发布.
+
+## 分发
+
+本服务器使用 ServerSync. 这个软件可以帮助你获得最新的 Mods 和 FTB Quests 文件等.
+
+整合包版权归 CAB 整合包著作权持有人(2022/8/13 10:00 UTC 时为 simibubi)所有.
+
+本服务器和 CAB 包含的所有 Mods 的著作权归 Mod 各自的著作权持有人所有.
+
+PCL 2 和 ServerSync 的著作权同上.
+
+## 规则
+
+> 相亲相爱, 互相帮助, 不得互相伤害, 不得偷盗抢劫, 不得寻衅滋事, 不得主动挑起争端, 在其他友善的人需要帮助时积极友善的施以援手.
+
+[飞天意面神教 | SimMC Wiki | Fandom](https://simmc.fandom.com/zh/wiki/%E9%A3%9E%E5%A4%A9%E6%84%8F%E9%9D%A2%E7%A5%9E%E6%95%99) (部分改动)
+
+## 指南
+
+1. **获取和使用客户端**
+   
+   群文件"[客户端]scex client ver1.x.zip" (请选择最新的客户端).
+   
+   客户端附带了 PCL 2 和 ServerSync. 请详细阅读其内附带的 README.txt 文件.
+   
+   
+   
+   客户端附带的启动器已经添加了一个自定义面板.
+   
+   ![Custom panel in offical launcher for SCEX Creator EX](https://s3.bmp.ovh/imgs/2022/08/13/f745a8f099560df2.png)
+   
+   
+   
+   关于 PCL 2 的使用方法不再赘述. ServerSync 的使用方法可以参考其 GitHub 仓库的 Wiki.
+   
+   **提示: 很多问题都是因为客户端和服务端 Mods 不匹配. 请务必在 Minecraft 启动前执行一次 ServerSync 同步.**
+
+2. 前置要求
+   
+   服务器 Minecraft 客户端需要至少 3GiB 的内存. 建议分配 6-8GiB.
+   
+   其他性能要求请自行衡量判断.
+
+3. 关于整合包
+   
+   一些**及其**有用的链接:
+   
+   [机械动力 (Create) - MC百科](https://www.mcmod.cn/class/2021.html)
+   
+   [[CAB] 机械动力：永无止境 (Create: Above and Beyond - MC百科)](https://www.mcmod.cn/modpack/312.html)
+   
+   CAB 使用 FTB Quests. FTB Quests 的使用方法不再赘述, 请查询相关资料.
+
+4. FAQ
+   
+   **请参考客户端内 README.txt**
+
+
+
+
