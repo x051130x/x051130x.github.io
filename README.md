@@ -28,7 +28,7 @@ PCL 2 和 ServerSync 的著作权同上.
 
 > 相亲相爱, 互相帮助, 不得互相伤害, 不得偷盗抢劫, 不得寻衅滋事, 不得主动挑起争端, 在其他友善的人需要帮助时积极友善的施以援手.
 
----- [飞天意面神教 | SimMC Wiki | Fandom](https://simmc.fandom.com/zh/wiki/%E9%A3%9E%E5%A4%A9%E6%84%8F%E9%9D%A2%E7%A5%9E%E6%95%99) (部分改动)
+[飞天意面神教 | SimMC Wiki | Fandom](https://simmc.fandom.com/zh/wiki/%E9%A3%9E%E5%A4%A9%E6%84%8F%E9%9D%A2%E7%A5%9E%E6%95%99) (部分改动)
 
 ## 指南
 
