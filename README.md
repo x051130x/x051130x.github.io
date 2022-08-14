@@ -1,5 +1,7 @@
 # SCEX Creator EX
 
+![server logo head picture](https://user-images.githubusercontent.com/109353165/184534804-f6a33991-fb3d-446d-9617-2d85dca61144.png)
+
 [toc]
 
 ## 简介
@@ -58,7 +60,7 @@ PCL 2 和 ServerSync 的著作权同上.
 
 3. 关于整合包
    
-   一些**及其**有用的链接:
+   一些**极其**有用的链接:
    
    [机械动力 (Create) - MC百科](https://www.mcmod.cn/class/2021.html)
    
