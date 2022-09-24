@@ -14,7 +14,7 @@
   <meta content="website" property="og:type">
 {% endif %}
 {% if page.description %}
-  <meta content="{{ page.description | escape }}" property="og:description">
+  <meta content="{{ page.description | escape | replace: "\"", "\\\"" }}" property="og:description">
 {% else %}
   <meta content="{{ site.description | escape }}" property="og:description">
 {% endif %}
