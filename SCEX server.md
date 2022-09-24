@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Space Creator EX
-permalink: / String / Permalink for the webpage
-tagline: String Optional DevJournal Feature : Tagline for the page
+permalink:   /scex/
+tagline: SCEX server
 ---
 
 *此页面内容尚未完全确定，后续可能会有内容变更/新页面的出现
@@ -38,6 +38,16 @@ QQ 群聊: 362344872
 PCL 2 和 ServerSync 的著作权同上.
 
  <br/>
+ 
+ ## TODO LIST
+ 
+ 其他模式的子服（周目整合包/原版SMP等）
+ 
+ 性能更好的自有服务器
+ 
+ 同时在线>10(是的我在想pitch)
+
+<br/>
 
 查阅我们的[入服指南]({% post_url 2022-8-19-guide %})
 
