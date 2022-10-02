@@ -7,7 +7,7 @@ tagline: SCEX server
 
 *此页面内容尚未完全确定，后续可能会有内容变更/新页面的出现
 
-![server logo head picture](https://user-images.githubusercontent.com/109353165/184545759-71e0e280-18f4-444f-ab1b-71b70c21e14e.png)
+<img style="widget:100%;height:100%" title="Server Icon" src="https://user-images.githubusercontent.com/109353165/184545759-71e0e280-18f4-444f-ab1b-71b70c21e14e.png">
 
 [toc]
 
