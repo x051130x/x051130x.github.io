@@ -23,6 +23,8 @@ QQ 群聊: 362344872
 
 服务器的所有消息都会在此群内发布.
 
+<iframe src="https://kookapp.cn/widget?id=1129643531263467&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+
 ## 分发
 
 本服务器使用 ServerSync. 这个软件可以帮助你获得最新的 Mods 和 FTB Quests 文件等.
