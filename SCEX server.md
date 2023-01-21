@@ -53,4 +53,4 @@ PCL 2 和 ServerSync 的著作权同上.
 
 [服务器更新日志]({% post_url 2022-8-19-uplog %})（页面尚未完工）
 
-养老侧子服网页地图(http://nj1.mossfrp.cn:55312/)
+[养老侧子服网页地图](http://nj1.mossfrp.cn:55312/)
