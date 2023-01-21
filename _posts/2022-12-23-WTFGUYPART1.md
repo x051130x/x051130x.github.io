@@ -3,7 +3,7 @@ layout: post
 title: 关于安康车车群被网左魔怔人吓死这件事PART1
 ---
 
-[chartonline]https://x051130x.github.io/2022/12/23/WTFGUYPART2.html
+[chartonline]:https://x051130x.github.io/2022/12/23/WTFGUYPART2.html
 
 乐子事件web存档
 
