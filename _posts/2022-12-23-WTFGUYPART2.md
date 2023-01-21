@@ -1,11 +1,13 @@
 ---
 layout: post
-title: 关于安康车车群被网左魔怔人吓死这件事
+title: 关于安康车车群被网左魔怔人吓死这件事PART2
 ---
 
->still test!
+[chartonline]https://x051130x.github.io/2022/12/23/WTFGUYPART1.html
 
->大群聊天记录（请先查看）</br>https://x051130x.github.io/2022/12/23/WTFGUYPART1.html
+乐子事件web存档
+
+>大群聊天记录 PART1（请先查看）[此页面][chartonline]
 
 此记录，是安康市东方project同好群，小群记录，现予以展示。
 红色字体是补充内容
