@@ -11,10 +11,6 @@ tagline: SCEX server
 
 [toc]
 
-<h3 ?php include '.\_includes\stashow.php';?></h3>
-
-当前在线人数
-
 ## 简介
 
 Space Creator EX. 1.18.2&1.x.x Minecraft 模组服务器，始建于2020.6.
