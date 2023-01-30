@@ -25,7 +25,7 @@ QQ 群聊: 362344872
 
 服务器的所有消息都会在此群内发布.
 
-<table><tr><td><iframe src="https://kookapp.cn/widget?id=1129643531263467&theme=dark" width="350" height="460" allowtransparency="true" frameborder="0"></iframe></td><td><img src=https://x051130x.github.io/img/qrcode.jpg></td></tr></table>
+<table><tr><td><iframe src="https://kookapp.cn/widget?id=1129643531263467&theme=dark" width="350" height="460" allowtransparency="true" frameborder="0"></iframe></td><td><img src="https://x051130x.github.io/img/qrcode.jpg"></td></tr></table>
 
 ## 分发
 
