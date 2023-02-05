@@ -18,21 +18,28 @@ layout: default
     <div class="post-list">
   {%  for post in site.posts %}
   <div class="post-box">
-    <div class="posted">
+    <table border="0">
+      <td>
+        <div class="posted">
       
-      <span class="posted-on">
+          <span class="posted-on">
 
-        {{ post.date | date: "%A, %B %-d, %Y" }}
-      </span>
-      <span class="in">
-        in
-      </span>
-      <span class="categories-on">
-        {% for category in post.categories%}
-        {{category}} &nbsp;{% if forloop.last %}{% else %},{% endif %}
-        {% endfor %}
-      </span>
-    </div>
+            {{ post.date | date: "%A, %B %-d, %Y" }}
+          </span>
+          <span class="in">
+            in
+          </span>
+          <span class="categories-on">
+            {% for category in post.categories%}
+            {{category}} &nbsp;{% if forloop.last %}{% else %},{% endif %}
+            {% endfor %}
+          </span>
+        </div>
+      </td>
+      <td>
+        <!--post banner todo-->>
+      </td>
+    </table>
     <div class="post-title">
     <a class="post-title" href="{{post.url | prepend:site.baseurl }}" > {{ post.title }}</a>
     </div>
