@@ -4,51 +4,38 @@ layout: default
 
 
 <section>
-  <div class="jumbotron">
-    <div class="container">
-      {{site.description}}
-
+    <div class="jumbotron">
+        <div class="container">
+            {{site.description}}
+        </div>
     </div>
-
-</div>
 </section>
 
 <section id="page-content">
-  <div class="container">
-    <div class="post-list">
-  {%  for post in site.posts %}
-  <div class="post-box">
-    <table border="0">
-      <td>
-        <div class="posted">
-      
-          <span class="posted-on">
-
-            {{ post.date | date: "%A, %B %-d, %Y" }}
-          </span>
-          <span class="in">
-            in
-          </span>
-          <span class="categories-on">
-            {% for category in post.categories%}
-            {{category}} &nbsp;{% if forloop.last %}{% else %},{% endif %}
+    <div class="container">
+        <div class="post-list">
+            {% for post in site.posts %}
+            <div class="post-box">
+                <div>
+                    <div class="posted">
+                        <span class="posted-on">
+                            {{ post.date | date: "%A, %B %-d, %Y" }}
+                        </span>
+                        <span class="in">in</span>
+                        <span class="categories-on">
+                            {% for category in post.categories%}
+                            {{category}} &nbsp;{% if forloop.last %}{% else %},{% endif %}
+                            {% endfor %}
+                        </span>
+                    </div>
+                    <div class="post-title">
+                        <a class="post-title" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
+                    </div>
+                </div>
+                {% if post.banner %}
+                <img class="post-banner" title="Banner" src="{{ post.banner | prepend: site.baseurl }}">
+                {% endif %}
+            </div>
             {% endfor %}
-          </span>
         </div>
-        <div class="post-title">
-          <a class="post-title" href="{{post.url | prepend:site.baseurl }}" > {{ post.title }}</a>
-        </div>
-      </td>
-      <td>
-        <!--post banner todo-->
-      </td>
-    </table>
-    <!--
-    <div class="post-excerpt">
-      {{ post.content | strip_html | truncatewords:20}}
-    </div>
-    -->
-  </div>
-  {% endfor %}
-  </div>
 </section>

@@ -1,191 +1,227 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+
 @charset "utf-8";
 
 // Our variables
 $base-font-family: 'Noto Sans SC', "Sarasa Gothic SC", "Source Han Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-size: 16px;
 $base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
+$small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
+$spacing-unit: 30px;
 
-$text-color:       #111;
+$text-color: #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color: #2a7ae2;
 
-$grey-color:       #828282;
+$grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$grey-color-dark: darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width: 800px;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$on-palm: 600px;
+$on-laptop: 800px;
 
-.navbar-default{
-  background: #093750 !important;
-  border: none !important;
-
+.scalableimg {
+    width: 100%;
+    height: 100%;
 }
 
-.navbar-default .navbar-nav > li > a{
-    color:#abc0ca !important;
+.navbar-default {
+    background: #093750 !important;
+    border: none !important;
 }
-.navbar-default .navbar-nav > li > a:hover{
-    color:#03a4fb !important;
 
+.navbar-default .navbar-nav>li>a {
+    color: #abc0ca !important;
 }
-.navbar-default .navbar-nav > li > a:focus{
-    color:#03a4fb !important;
-}
-.navbar-default .navbar-brand{
-  color:#abc0ca !important;
-}
-.footer-content{
-  text-align: center;
-  padding: 0.5em;
-}
-body{
-  background-color: #022335 !important;
-  font-family: $base-font-family !important;
-  color: #abc0ca !important;
-}
-.page-stuff{
-  font-size: 19px;
-  a {
+
+.navbar-default .navbar-nav>li>a:hover {
     color: #03a4fb !important;
-    text-decoration: none;
-      &:hover{
-        color:#03a4fb !important;
-        text-decoration: none !important;
-        border-bottom: 1px dotted #03a4fb;
-        padding-bottom:0.5em;
-      }
-    }
-  }
-#page-content{
-  padding-bottom: 4em;
+
 }
 
-.page-stuff{
-  padding-top: 2em;
-  padding-bottom: 5em;
+.navbar-default .navbar-nav>li>a:focus {
+    color: #03a4fb !important;
 }
+
+.navbar-default .navbar-brand {
+    color: #abc0ca !important;
+}
+
+.footer-content {
+    text-align: center;
+    padding: 0.5em;
+}
+
+body {
+    background-color: #022335 !important;
+    font-family: $base-font-family !important;
+    color: #abc0ca !important;
+}
+
+.page-stuff {
+    font-size: 19px;
+
+    a {
+        color: #03a4fb !important;
+        text-decoration: none;
+
+        &:hover {
+            color: #03a4fb !important;
+            text-decoration: none !important;
+            border-bottom: 1px dotted #03a4fb;
+            padding-bottom: 0.5em;
+        }
+    }
+}
+
+#page-content {
+    padding-bottom: 4em;
+}
+
+.page-stuff {
+    padding-top: 2em;
+    padding-bottom: 5em;
+}
+
 .jumbotron {
-  background: #093750 !important;
+    background: #093750 !important;
 }
+
 a {
     color: #03a4fb;
     text-decoration: none;
 }
-a:hover{
-  color:#03a4fb !important;
-  text-decoration: none !important;
-  border-bottom: 1px dotted #03a4fb;
+
+a:hover {
+    color: #03a4fb !important;
+    text-decoration: none !important;
+    border-bottom: 1px dotted #03a4fb;
 
 }
 
-.post-list{
-
+.post-list {
     text-align: left;
-
-}
-.post-box{
-  padding-top: 2em;
-  padding-bottom: 2em;
-  padding-left: 10px;
-  background-color: #093750 ;
-  border-left-style: solid;
-  border-left-color: #03a4fb;
-  margin-bottom: 10px;
 }
 
-.post-title{
-  font-size: 20px !important;
-color:  #abc0ca !important;
+.post-box {
+    padding-left: 10px;
+    background-color: #093750;
+    border-left-style: solid;
+    border-left-color: #03a4fb;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
 }
 
-.posted{
-  border-bottom-style: solid;
-  border-bottom-color: #828282;
-  border-width: 210px;
+.post-banner {
+    padding: 10px;
 }
 
-.post-excerpt{
-  color: white !important;
-padding-top: 0.5em;
-padding-bottom: 0.3em;
-}
-.post-title-main{
-  font-size: 25px;
-  text-align: center;
-  color: #abc0ca !important;
-}
-.post-content{
-  font-size: 19px;
-  text-align: justify;
-  padding-bottom: 5em;
-}
-pre{
-background-color: black !important;
-border:none !important;
-border-radius: 0px !important;
-font-size: 20px !important;
-padding: 1.5em !important;
-color:white !important;
-}
-.post-meta{
-  color: skyblue !important;
+.post-title {
+    margin-bottom: 2em;
+    font-size: 20px !important;
+    color: #abc0ca !important;
 }
 
-code{
-  background-color: black !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 0px !important;
+.posted {
+    margin-top: 2em;
+    border-bottom-style: solid;
+    border-bottom-color: #828282;
+    width: 210px;
 }
 
-.page-tagline{
-  font-size: 20px;
-text-align: center;
+.post-banner {
+    text-align: right;
+    height: 280px;
 }
 
-.download{
-  padding:2em;
-  font-size: 19px;
-}
-.intro{
-  font-size: 19px;
-
-}
-.manual-title{
-  font-size: 21px;
-  padding: 1em;
-  text-transform: uppercase;
-
-}
-.manual-content{
-  text-align: justify;
-  font-size: 19px;
+.post-excerpt {
+    color: white !important;
+    padding-top: 0.5em;
+    padding-bottom: 0.3em;
 }
 
-.man-title{
-  font-size: 22px;
-  text-align: center;
-  padding: 1em;
-  letter-spacing: 2px;
+.post-title-main {
+    font-size: 25px;
+    text-align: center;
+    color: #abc0ca !important;
+}
+
+.post-content {
+    font-size: 19px;
+    text-align: justify;
+    padding-bottom: 5em;
+}
+
+pre {
+    background-color: black !important;
+    border: none !important;
+    border-radius: 0px !important;
+    font-size: 20px !important;
+    padding: 1.5em !important;
+    color: white !important;
+}
+
+.post-meta {
+    color: skyblue !important;
+}
+
+code {
+    background-color: black !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 0px !important;
+}
+
+.page-tagline {
+    font-size: 20px;
+    text-align: center;
+}
+
+.download {
+    padding: 2em;
+    font-size: 19px;
+}
+
+.intro {
+    font-size: 19px;
 
 }
 
-.jumbotron{
-  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+.manual-title {
+    font-size: 21px;
+    padding: 1em;
+    text-transform: uppercase;
+
 }
-.navbar{
-  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+
+.manual-content {
+    text-align: justify;
+    font-size: 19px;
+}
+
+.man-title {
+    font-size: 22px;
+    text-align: center;
+    padding: 1em;
+    letter-spacing: 2px;
+
+}
+
+.jumbotron {
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
 // Use media queries like this:
@@ -204,6 +240,5 @@ text-align: center;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "syntax-highlighting"
+@import "syntax-highlighting"
 ;
