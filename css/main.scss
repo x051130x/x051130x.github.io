@@ -95,8 +95,6 @@ a:hover{
 
 }
 .post-box{
-  padding-top: 2em;
-  padding-bottom: 2em;
   padding-left: 10px;
   background-color: #093750 ;
   border-left-style: solid;
@@ -105,14 +103,16 @@ a:hover{
 }
 
 .post-title{
+  margin-bottom: 2em;
   font-size: 20px !important;
 color:  #abc0ca !important;
 }
 
 .posted{
+  margin-top: 2em;
   border-bottom-style: solid;
   border-bottom-color: #828282;
-  border-width: 210px;
+  width: 210px;
 }
 
 .post-excerpt{
