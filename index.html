@@ -32,7 +32,9 @@ layout: default
                         <a class="post-title" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
                     </div>
                 </div>
+                {% if post.banner %}
                 <img class="post-banner" title="Banner" src="{{ post.banner | prepend: site.baseurl }}">
+                {% endif %}
             </div>
             {% endfor %}
         </div>
