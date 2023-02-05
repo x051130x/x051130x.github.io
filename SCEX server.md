@@ -1,19 +1,19 @@
 ---
 layout: page
 title: Space Creator EX
-permalink:   /scex/
+permalink: /scex/
 tagline: SCEX server
 ---
 
 *此页面内容尚未完全确定，后续可能会有内容变更/新页面的出现
 
-<img style="widget:100%;height:100%" title="Server Icon" src="https://user-images.githubusercontent.com/109353165/184545759-71e0e280-18f4-444f-ab1b-71b70c21e14e.png">
+<img class="scalableimg" title="Server Icon" src="https://user-images.githubusercontent.com/109353165/184545759-71e0e280-18f4-444f-ab1b-71b70c21e14e.png">
 
 [toc]
 
 ## 简介
 
-Space Creator EX. 1.18.2&1.x.x Minecraft 模组服务器，始建于2020.6.
+Space Creator EX. 1.18.2&1.x.x Minecraft 模组服务器，始建于 2020.6.
 
 以建立一个自由，互助的社区为目标.
 
@@ -25,7 +25,10 @@ QQ 群聊: 362344872
 
 服务器的所有消息都会在此群内发布.
 
-<table><tr><td><iframe src="https://kookapp.cn/widget?id=1129643531263467&theme=dark" width="350" height="460" allowtransparency="true" frameborder="0"></iframe></td><td><img src="https://x051130x.github.io/img/qrcode.jpg"></td></tr></table>
+<div style="display: flex;">
+<iframe src="https://kookapp.cn/widget?id=1129643531263467&theme=dark" width="350" height="460" allowtransparency="true" frameborder="0"></iframe>
+<img src="https://x051130x.github.io/img/qrcode.jpg">
+</div>
 
 ## 分发
 
@@ -36,7 +39,7 @@ QQ 群聊: 362344872
 本服务器和整合包含的所有 Mods 的著作权归 Mod 各自的著作权持有人所有.
 
 PCL 2 和 ServerSync 的著作权同上.
- 
+
 ## TODO LIST
 
 其他模式的子服（周目整合包 done/~~原版SMP等~~）
@@ -49,9 +52,10 @@ PCL 2 和 ServerSync 的著作权同上.
 
 ## 特别鸣谢
 
-Magellan67 Creeper_yi_que
-
-BCF_SAKUYA RaidenBaalU8F5C
+* Magellan67
+* Creeper_yi_que
+* BCF_SAKUYA
+* RaidenBaalU8F5C
 
 -------------------------------------------------
 
