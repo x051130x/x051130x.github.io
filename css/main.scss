@@ -91,7 +91,7 @@ a:hover{
 
 .post-list{
 
-    text-align: center;
+    text-align: left;
 
 }
 .post-box{
@@ -100,11 +100,17 @@ padding-bottom: 2em;
   background-color: #093750 ;
   border-left-style: solid;
   border-left-color: #03a4fb;
+  margin-bottom: 10px;
 }
 
 .post-title{
   font-size: 20px !important;
 color:  #abc0ca !important;
+}
+
+.posted{
+  border-bottom-style: solid;
+  border-bottom-color: #828282;
 }
 
 .post-excerpt{
