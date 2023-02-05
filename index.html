@@ -35,6 +35,9 @@ layout: default
             {% endfor %}
           </span>
         </div>
+        <div class="post-title">
+          <a class="post-title" href="{{post.url | prepend:site.baseurl }}" > {{ post.title }}</a>
+        </div>
       </td>
       <td>
         <!--post banner todo-->>
