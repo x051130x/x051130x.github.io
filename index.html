@@ -7,6 +7,24 @@ layout: default
     <div class="jumbotron">
         <div class="container">
             {{site.description}}
+            </br><img src="https://badges.toozhao.com/badges/01GQAPK8XQZC5AC3GWBKK93WV0/blue.svg" />
+            <div style="width:100%;overflow: hidden;">
+                <div class=pagehidebar id="title" style="height:30px;" onclick="onTileClick()">[折叠部分] Self introduction ▽</div>
+                <div class=pageinsidebar id="content" style="height:0px;transition: height 0.2s;">
+                    东方众/飞友/车迷</br>
+                    60% uuz厨 + 40% 苗厨</br>
+                    会记录点拍车/拍机/mc相关/其他的什么</br>
+                    </br>
+                    contact</br>
+                    E-mail: xiazihe051130@hotmail.com</br>
+                    
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                  var content = document.getElementById("content");
+                  function onTileClick() {content.style.height = content.offsetHeight===150?0+'px':150+'px';}
+            </script> 
         </div>
     </div>
 </section>
