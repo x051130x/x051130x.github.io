@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 记录 | 23/2/18 安康高新区 日落之时/晚间 街拍摄像集
-banner: https://s1.ax1x.com/2023/02/18/pSLr0G8.jpg
+banner: img/photobanner1.jpg
 ---
 
 算是第一个摄影集之类的罢。
