@@ -1,0 +1,35 @@
+<script>
+	var monthname = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	function padding(topad)
+	{
+		topad = topad.toString();
+		if (topad.length == 1)
+		{
+		topad = '0' + topad;
+		};
+		return topad;
+	};
+	function tempus()
+	{
+		now = new Date();
+		document.getElementById("time").innerHTML = padding(now.getHours()) + ':' + padding(now.getMinutes()) + ':' + padding(now.getSeconds());
+		document.getElementById("date").innerHTML = now.getDate() + ' ' + monthname[now.getMonth()] + ' ' + now.getFullYear();
+		setTimeout("tempus()", 1000);
+	}
+</script>
+<div onload="tempus();">
+	<table>
+		<tr>
+			<td><span>Current time:UTC+8</span></td>
+		</tr>
+		<tr>
+			<td><span>第138季 日与秋与木之年</span></td>
+		</tr>
+		<tr>
+			<td><span id="time">TIME</span></td>
+		</tr>
+		<tr>
+			<td><span id="date">DATE</span></td>
+		</tr>
+	</table>
+</div>

@@ -5,8 +5,8 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family: 'Noto Sans SC', "Sarasa Gothic SC", "Source Han Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size: 16px;
+$base-font-family: 'JetBrains MONO', "Sarasa Gothic SC", "Source Han Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size: 18px;
 $base-font-weight: 400;
 $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -26,6 +26,10 @@ $content-width: 800px;
 
 $on-palm: 600px;
 $on-laptop: 800px;
+
+td{
+    vertical-align: top;
+}
 
 .scalableimg {
     width: 100%;
@@ -57,6 +61,33 @@ $on-laptop: 800px;
 .footer-content {
     text-align: center;
     padding: 0.5em;
+}
+
+.headfront{
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    width: 100%;
+    height: 100%;
+}
+
+.headbackground{
+    margin-top: 30px;
+    width: 100%;
+    height: 1000px;
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bannerside{
+    width: 300px;
+    background-color: #093750;
+    border-left-style: solid;
+    border-left-color: #03a4fb;
+    padding: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
 }
 
 body {
@@ -130,6 +161,24 @@ a:hover {
     width: 100%;
 }
 
+.postbody{
+    margin-top: 60px;
+    background-color: #093750;
+    width: 850px;
+    padding: 20px;
+}
+
+.contect{
+    padding: 15px;
+    margin-top: 60px;
+    margin-right: 10px;
+    background-color: #093750;
+    border-left-style: solid;
+    border-left-color: #03a4fb;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
 .post-list {
     text-align: left;
 }
@@ -196,6 +245,10 @@ pre {
 
 .post-meta {
     color: skyblue !important;
+    border-bottom: #fdfdfd;
+    border-bottom-style: solid;
+    border-width: 2px;
+    margin-bottom: 20px
 }
 
 code {
