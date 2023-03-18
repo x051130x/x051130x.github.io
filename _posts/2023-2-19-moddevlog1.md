@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 记录 | mod 开发日志#1 立项&环境搭建
-banner: img/moddevlogbanner1.jpg
+banner: img/moddevlogbanner1.webp
 ---
 
 算是我mc生涯的一个重要事件，所以决定写写dev日志什么的。
