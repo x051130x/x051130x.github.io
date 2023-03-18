@@ -27,7 +27,7 @@ QQ 群聊: 362344872
 
 <div style="display: flex;">
 <iframe src="https://kookapp.cn/widget?id=1129643531263467&theme=dark" width="350" height="460" allowtransparency="true" frameborder="0"></iframe>
-<img src="https://x051130x.github.io/img/qrcode.jpg">
+<img src="{{ "/img/qrcode.jpg" | prepend: site.baseurl }}">
 </div>
 
 ## 分发
@@ -46,7 +46,7 @@ PCL 2 和 ServerSync 的著作权同上.
 
 性能更好的自有服务器
 
-同时在线>10(是的我在想peach)(2022-12-29记录为7)
+同时在线 > 10 (是的我在想peach)(2022-12-29记录为7)
 
 -------------------------------------------------
 

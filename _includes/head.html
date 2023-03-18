@@ -1,66 +1,90 @@
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="{{ site.title }}" property="og:site_name">
-{% if page.title %}
+  {% if page.title %}
   <meta content="{{ page.title }}" property="og:title">
-{% else %}
+  {% else %}
   <meta content="{{ site.title }}" property="og:title">
-{% endif %}
-{% if page.title %}
+  {% endif %}
+  {% if page.title %}
   <meta content="article" property="og:type">
-{% else %}
+  {% else %}
   <meta content="website" property="og:type">
-{% endif %}
-{% if page.description %}
+  {% endif %}
+  {% if page.description %}
   <meta content="{{ page.description | escape }}" property="og:description">
-{% else %}
+  {% else %}
   <meta content="{{ site.description | escape }}" property="og:description">
-{% endif %}
-{% if page.url %}
+  {% endif %}
+  {% if page.url %}
   <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-{% endif %}
-{% if page.date %}
+  {% endif %}
+  {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
   <meta content="{{ site.url }}/about/" property="article:author">
-{% endif %}
+  {% endif %}
 
-  <meta property="og:image" content="">
-
-{% if page.categories %}
+  {% if page.categories %}
   {% for category in page.categories limit:1 %}
   <meta content="{{ category }}" property="article:section">
   {% endfor %}
-{% endif %}
-{% if page.tags %}
+  {% endif %}
+
+  {% if page.tags %}
   {% for tag in page.tags %}
   <meta content="{{ tag }}" property="article:tag">
   {% endfor %}
-{% endif %}
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape }}{% else %}{{ site.description | escape }}{% endif %}">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" integrity="sha512-QAV866KcCo2YSgj8D7BW+Zn3Fe5wVKTWwzKtWy8mkW+tePcJL7JYilvdfrBFQcdz4ODD48GpIPnhTp9UDI37uw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  
-  <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-        $('#toc').toc();
-    });
-  </script>
+  {% endif %}
+
+  <title>
+    {% if page.title %}
+      {{ page.title | escape }}
+    {% else %}
+      {{ site.title | escape }}
+    {% endif %}
+  </title>
+  <meta name="description"
+    content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape }}{% else %}{{ site.description | escape }}{% endif %}">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.2/dist/jquery.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/js/bootstrap.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ghiculescu/jekyll-table-of-contents/toc.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
-  <!-- <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300,500,700' rel='stylesheet' type='text/css'> -->
-<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-hQpvDQiCJaD2H465dQfA717v7lu5qHWtDbWNPvaTJ0ID5xnPUlVXnKzq7b8YUkbN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.6.1/css/font-awesome.min.css"
+    crossorigin="anonymous">
+
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend:
+    site.baseurl | prepend: site.url }}">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+  <script>
+    var monthname = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    function padding(topad)
+    {
+      topad = topad.toString();
+      if (topad.length == 1)
+      {
+      topad = '0' + topad;
+      };
+      return topad;
+    };
+    function setCurrentTimeDate()
+    {
+      now = new Date();
+      $("#banner-time").html(padding(now.getHours()) + ':' + padding(now.getMinutes()) + ':' + padding(now.getSeconds()));
+      $("#banner-date").html(now.getDate() + ' ' + monthname[now.getMonth()] + ' ' + now.getFullYear());
+      setTimeout("setCurrentTimeDate()", 500);
+    }
+    $(document).ready(setCurrentTimeDate);
+  </script>
 </head>

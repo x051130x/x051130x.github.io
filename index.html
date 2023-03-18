@@ -3,94 +3,84 @@ layout: default
 ---
 
 <section class="headbackground">
-    <div class="headfront">
-        <p style="font-size: 20px;margin-left: 20px;margin-top: 40px;padding-top: 40px;color: white;">「この幻想郷では常識に囚われてはいけないのですね！」</p>
-        <div style="margin-left: 20px;color: white;position: absolute;bottom: 20px;">
-        <p style="font-size: 15px;">VOR Hakugyokurou</p>
-        <p style="font-size: 30px;">THYuyuko_051130</p>
-        <p style="font-size:40px;margin-top: -40px;">▂▂</p>
-        <br>
-        </div>
+  <div class="headfront">
+    <p style="font-size: 20px;margin-left: 20px;padding-top: 40px;color: white;">
+      「この幻想郷では常識に囚われてはいけないのですね！」</p>
+    <div style="margin-left: 20px;color: white;position: absolute;bottom: 20px;">
+      <p style="font-size: 15px;">VOR Hakugyokurou</p>
+      <p style="font-size: 30px;">THYuyuko_051130</p>
+      <p style="font-size:40px;margin-top: -40px;">▂▂</p>
+      <br>
     </div>
+  </div>
 </section>
 
 <section>
-    <div class="jumbotron">
-        <div class="container">
-            <img style="width: 100%;" src="https://x051130x.github.io/img/top.png" title="top" />
-            <img src="https://badges.toozhao.com/badges/01GQAPK8XQZC5AC3GWBKK93WV0/blue.svg" />
-            <div style="width:100%;overflow: hidden;">
-                <div class=pagehidebar id="title" onclick="onTileClick()">[FOLDED] Self introduction & Links ▽</div>
-                <div class=pageinsidebar id="content" style="height:0px;transition: height 0.2s;">
-                    东方众/飞友/车迷</br>
-                    uuz厨 + 苗厨</br>
-                    会记录点拍车/拍机/mc相关/其他的什么</br>
-                    事一个mc服务器腐竹，详见页顶Space Creator EX.</br>
-                    </br>
-                    Contact:</br>
-                    E-mail: xiazihe051130@hotmail.com</br>
-                    qq: 1161254733 ▽</br>
-                    <img src="https://x051130x.github.io/img/qrcodeme.jpg"></br>
-                    </br>
-                    平行幻想郷 / Links:</br>
-                    <a href="https://space.bilibili.com/484869373?spm_id_from=333.1007.0.0">^> bilibili channel</a></br>
-                    <a href="https://www.jinguanzj.com/">^> [友链] 阳阳の茶馆</a></br>
-                    <a href="https://space.bilibili.com/351616837/?spm_id_from=333.999.0.0">^> [友链] 永远的车万人 の bilibili channel</a></br>
-                </div>
-            </div>
-
-            <script type="text/javascript">
-                  var content = document.getElementById("content");
-                  function onTileClick() {content.style.height = content.offsetHeight===510?0+'px':510+'px';}
-            </script> 
+  <div class="jumbotron">
+    <div class="container">
+      <img class="scalableimg" src="{{ "/img/top.png" | prepend: site.baseurl }}" title="top" />
+      <img src="https://badges.toozhao.com/badges/01GQAPK8XQZC5AC3GWBKK93WV0/blue.svg" />
+      <div style="width:100%;overflow: hidden;">
+        <div class=detailsbar id="detailstitle" onclick="onTileClick()">[FOLDED] Self introduction & Links</div>
+        <div class=detailsbar-content id="detailscontent" style="height:0px;transition: height 0.2s;">
+          东方众/飞友/车迷</br>
+          uuz厨 + 苗厨</br>
+          会记录点拍车/拍机/mc相关/其他的什么</br>
+          事一个mc服务器腐竹，详见页顶Space Creator EX.</br>
+          </br>
+          Contact:</br>
+          E-mail: xiazihe051130@hotmail.com</br>
+          qq: 1161254733 ▽</br>
+          <img src="{{ "/img/qrcodeme.jpg" | prepend: site.baseurl }}"></br>
+          </br>
+          平行幻想郷 / Links: </br>
+          <a href="https://space.bilibili.com/484869373?spm_id_from=333.1007.0.0">^> bilibili channel</a></br>
+          <a href="https://www.jinguanzj.com/">^> [友链] 阳阳の茶馆</a></br>
+          <a href="https://space.bilibili.com/351616837/?spm_id_from=333.999.0.0">^> [友链] 永远的车万人 の bilibili
+            channel</a></br>
         </div>
+      </div>
+
+      <script type="text/javascript">
+        var content = $("#detailscontent");
+        function onTileClick() { content.css("height", content.outerHeight() === 510 ? 0 + 'px' : 510 + 'px'); }
+      </script>
     </div>
+  </div>
 </section>
 
 <section id="page-content">
-    <table style="margin: auto;">
-        <tr>
-            <td>
-                <div class="bannerside">
-                    {% include time.htm %}
-                </div>
-            </td>
-            <td>
-               <div class="container">
-                 <div class="post-list">
-                    {% for post in site.posts %}
-                        <div class="post-box">
-                            <div>
-                                <div class="posted">
-                                    <span class="posted-on">
-                                        {{ post.date | date: "%A, %B %-d, %Y" }}
-                                    </span>
-                                    <span class="in">in</span>
-                                    <span class="categories-on">
-                                        {% for category in post.categories%}
-                                        {{category}} &nbsp;{% if forloop.last %}{% else %},{% endif %}
-                                        {% endfor %}
-                                    </span>
-                                </div>
-                                <div class="post-title">
-                                    <a class="post-title" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
-                                </div>
-                            </div>
-                            {% if post.banner %}
-                            <img class="post-banner" title="Banner" src="{{ post.banner | prepend: site.baseurl }}">
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                </div>
-            </td>
-        </tr>
-    </table>
+  <div style="display: flex;">
+    <div class="bannerbar-onmenubar" style="margin-left: 10px;">
+      <div class="banner">
+        {% include time.html %}
+      </div>
+    </div>
+    <div class="container">
+      <div class="post-list">
+        {% for post in site.posts %}
+        <div class="post-box">
+          <div>
+            <div class="posted">
+              <span class="posted-on">
+                {{ post.date | date: "%A, %B %-d, %Y" }}
+              </span>
+              <span class="in">in</span>
+              <span class="categories-on">
+                {% for category in post.categories%}
+                {{category}} &nbsp;{% if forloop.last %}{% else %},{% endif %}
+                {% endfor %}
+              </span>
+            </div>
+            <div class="post-title">
+              <a class="post-title" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
+            </div>
+          </div>
+          {% if post.banner %}
+          <img class="post-banner" title="Banner" src="{{ post.banner | prepend: site.baseurl }}">
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
 </section>
-</br>
-</br>
-
-<div class="container footer-content">
-    DevJournal is made with by Hemang Kumar<br>
-    Powered By Jekyll<br>
-    This page was generated by <a href="https://pages.github.com" data-jzz-gui-player="true">GitHub Pages</a>.
-</div>

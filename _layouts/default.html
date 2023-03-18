@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
-  {% include head.html %}
-
-  <body onload="tempus();" style="height: 100%;">
-{% include header.html %}
-<section style="height: 100%;">
-{{content}}
-</section>
-<!--
-{% include footer.html %}
--->
-  </body>
+<html lang="zh-CN">
+{% include head.html %}
+<body>
+  {% include header.html %}
+  <section>
+    {{content}}
+  </section>
+  {% include footer.html %}
+</body>
 </html>

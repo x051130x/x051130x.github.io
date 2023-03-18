@@ -2,30 +2,30 @@
 layout: default
 ---
 
-
-
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-<div class="container">
-  <table>
-    <tr>
-      <td>
-        <div style="position: sticky;top: 60px;">
-          <div class="contect">
-            {% include time.htm %}
-          </div>
-          <div class="contect" style="margin-top: 10px;">
-            <div id="toc"></div>
-          </div>
+  <div class="container" style="display: flex;align-items: flex-start;">
+    <div class="bannerbar-onmenubar">
+      <div class="banner">
+        {% include time.html %}
+      </div>
+      <div class="banner" style="overflow: auto; padding-bottom: 0;">
+        <div class="toc-noborder" id="table-of-contents">
+          <i>Loading...</i>
         </div>
-      </td>
-      <td>
-      <div class="postbody">
-        <h2 class="post-title-main" itemprop="name headline">{{ page.title }}</h2>
-        <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-        {{ content }}
-      </td>
-    </tr>
-  </table>
-</div>
+      </div>
+    </div>
+    <div class="postbody">
+      <h2 class="post-title-main" itemprop="name headline">{{ page.title }}</h2>
+      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date |
+          date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope
+          itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+      {{ content }}
+    </div>
+  </div>
 </article>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#table-of-contents').toc({ showEffect: 'slideDown', title: '<span><i class="fa fa-list-ul" aria-hidden="true"></i> 目录：</span>' });
+  });
+</script>
