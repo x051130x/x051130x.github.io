@@ -116,7 +116,7 @@ $menubar-sticky-padding: 10px;
 .headbackground {
     width: 100%;
     height: calc(100vh - #{$menubar-height});
-    background-image: url('../img/bg.jpg');
+    background-image: url('{{ "/img/bg.webp" | prepend: site.baseurl }}');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

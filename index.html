@@ -18,8 +18,13 @@ layout: default
 <section>
   <div class="jumbotron">
     <div class="container">
-      <img class="scalableimg" src="{{ "/img/top.png" | prepend: site.baseurl }}" title="top" />
-      <img src="https://badges.toozhao.com/badges/01GQAPK8XQZC5AC3GWBKK93WV0/blue.svg" />
+      <div>
+        <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/x051130x/x051130x.github.io/github-pages?style=flat-square">
+        <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/x051130x/x051130x.github.io?style=flat-square">
+        <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/x051130x/x051130x.github.io?style=flat-square">
+        <img alt="GitHub" src="https://img.shields.io/github/license/x051130x/x051130x.github.io?style=flat-square">
+        <img alt="Views counter" src="https://badges.toozhao.com/badges/01GQAPK8XQZC5AC3GWBKK93WV0/blue.svg" />
+      </div>
       <div style="width:100%;overflow: hidden;">
         <div class=detailsbar id="detailstitle" onclick="onTileClick()">[FOLDED] Self introduction & Links</div>
         <div class=detailsbar-content id="detailscontent" style="height:0px;transition: height 0.2s;">
@@ -31,7 +36,7 @@ layout: default
           Contact:</br>
           E-mail: xiazihe051130@hotmail.com</br>
           qq: 1161254733 ▽</br>
-          <img src="{{ "/img/qrcodeme.jpg" | prepend: site.baseurl }}"></br>
+          <img src="{{ "/img/qrcodeme.webp" | prepend: site.baseurl }}"></br>
           </br>
           平行幻想郷 / Links: </br>
           <a href="https://space.bilibili.com/484869373?spm_id_from=333.1007.0.0">^> bilibili channel</a></br>
@@ -55,6 +60,9 @@ layout: default
       <div class="banner">
         {% include time.html %}
       </div>
+      <div class="banner">
+        <img alt="SCEX sevrer banner" src="{{ "/img/bannerscex.webp" | prepend: site.baseurl }}" style="width: 277px;"></br>
+    </div>
     </div>
     <div class="container">
       <div class="post-list">

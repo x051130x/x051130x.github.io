@@ -27,7 +27,7 @@ QQ 群聊: 362344872
 
 <div style="display: flex;">
 <iframe src="https://kookapp.cn/widget?id=1129643531263467&theme=dark" width="350" height="460" allowtransparency="true" frameborder="0"></iframe>
-<img src="{{ "/img/qrcode.jpg" | prepend: site.baseurl }}">
+<img src="{{ "/img/qrcode.webp" | prepend: site.baseurl }}">
 </div>
 
 ## 分发
