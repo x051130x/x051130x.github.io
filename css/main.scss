@@ -170,7 +170,7 @@ a:hover {
     padding: 20px;
 }
 
-.contect{
+.content{
     padding: 15px;
     margin-top: 60px;
     margin-right: 10px;
@@ -179,6 +179,8 @@ a:hover {
     border-left-color: #03a4fb;
     margin-bottom: 10px;
     width: 300px;
+    max-height: 600px;
+    overflow: auto;
 }
 
 .post-list {
