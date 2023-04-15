@@ -29,7 +29,35 @@ $on-laptop: 800px;
 $menubar-height: 50px;
 $menubar-sticky-padding: 10px;
 
+//loadingpage
+
+#loading {
+    position: absolute;
+    background-color: #093750;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    position: fixed;
+}
+#loading_bg{
+    background-color: #093750;
+}
+
+.loader{
+    height: 120px;
+    background-image: url('/img/loadAnime.gif');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    padding-left: 140px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
 // title
+
 h2{
     border-bottom: #828282;
     border-bottom-style: solid;
@@ -203,6 +231,17 @@ h2{
     border-width: 1px;
     margin-bottom: 40px;
     padding-bottom:2px;
+}
+
+.warning{
+    background-color: #380000;
+    color: #a80000;
+    border-left: #a80000;
+    border-left-style: solid;
+    border-left-width: 5px;
+    padding: 5px;
+    padding-right: 2px;
+    font-size: 15px;
 }
 
 // Pages
