@@ -4,8 +4,8 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family: 'JetBrains Mono', "思源黑体 CN","Sarasa Gothic SC", "Source Han Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size: 18px;
+$base-font-family: fontjmono, 'JetBrains Mono', "思源黑体 CN","Sarasa Gothic SC", "Source Han Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size: 16px;
 $base-font-weight: 400;
 $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -28,6 +28,13 @@ $on-laptop: 800px;
 
 $menubar-height: 50px;
 $menubar-sticky-padding: 10px;
+
+//fonts
+
+@font-face {
+    font-family: fontjmono;
+    src: url(/font/JetBrainsMono-Regular.ttf);
+}
 
 //loadingpage
 
@@ -139,6 +146,26 @@ h2{
     color: #abc0ca !important;
 }
 
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-item{
+    padding-left: 30px;
+    padding-right: 30px;
+    border-left: #828282;
+    border-left-style: solid;
+    border-left-width: 2px;
+}
+
+.footer-head{
+    font-size: 22px;
+}
 
 // Head
 
@@ -146,6 +173,11 @@ h2{
     background-color: rgba($color: #000000, $alpha: 0.7);
     width: 100%;
     height: 100%;
+}
+
+.show{
+    opacity: 1; 
+    transform: translateX(0); 
 }
 
 .headbackground {
@@ -233,15 +265,53 @@ h2{
     padding-bottom:2px;
 }
 
+// highlightdiv
+
 .warning{
     background-color: #380000;
+    background-image: url(/img/iconwarn.png);
     color: #a80000;
+    background-repeat: no-repeat;
+    background-position-y: 7px;
+    background-position-x: 5px;
+    background-size: 15px;
     border-left: #a80000;
     border-left-style: solid;
     border-left-width: 5px;
     padding: 5px;
     padding-right: 2px;
+    padding-left: 30px;
     font-size: 15px;
+}
+
+.caution{
+    @extend .warning;
+    background-color: #382200;
+    background-image: url(/img/iconcaut.png);
+    color: #a85a00;
+    border-left: #a85a00;
+    border-left-style: solid;
+    border-left-width: 5px;
+}
+
+.approved{
+    @extend .warning;
+    background-color: #003800;
+    background-image: url(/img/iconappr.png);
+    color: #00a800;
+    border-left: #00a800;
+    border-left-style: solid;
+    border-left-width: 5px;
+}
+
+.tips{
+    @extend .warning;
+    background-color: #000038;
+    background-image: url(/img/icontips.png);
+    color: #008fa8;
+    border-left: #008fa8;
+    border-left-style: solid;
+    border-left-width: 5px;
 }
 
 // Pages
@@ -259,6 +329,100 @@ h2{
 
 #page-content {
     padding-bottom: 4em;
+}
+
+// Serverpages
+
+.serverpage-container{
+    display: flex;
+    justify-content: center;
+}
+
+.serverpage-content{
+    width: 900px!important;
+    margin: 20px;
+}
+
+.serverpage-infoitem{
+    width: 340px;
+    margin-top: 20px;
+}
+
+.mainintro{
+    @extend .banner;
+    width: 900px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    position: relative
+}
+
+.serverstate{
+    @extend .banner;
+    width: 340px;
+    border-left: none;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.detail-btn{
+    width: 75px;
+    background-color: #abc0ca;
+    color: #022335;
+    padding: 3px;
+    padding-bottom: 2px;
+    margin-bottom: -30px;
+    position: relative;
+    bottom: 32px;
+    left: 75px;
+    &:hover+.detail-container{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.detail-container{
+    background-color: #111111;
+    border: white;
+    border-style: solid;
+    border-width: 1px;
+    position: absolute;
+    padding: 20px;
+    bottom: -50px;
+    right: 188px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+    width: 392px;
+    z-index: 10;
+}
+
+.mainintro-hov{
+    @extend .mainintro;
+    color: #093750;
+    transition: width 0.5s ease 0.1s,color 0.2s ease 0s;
+    display: flex;
+    height: 150px;
+    &:hover{
+        width: 1500px!important;
+        color: #abc0ca;
+        transition: width 0.5s ease 0s,color 0.5s ease 0.3s;
+    }
+}
+
+
+
+.serverstate-hov{
+    @extend .serverstate;
+    color: #093750;
+    transition: width 0.5s ease 0.1s,color 0.2s ease 0s;
+    display: flex;
+    height: 150px;
+    &:hover{
+        width: 1500px!important;
+        color: #abc0ca;
+        transition: width 0.5s ease 0s,color 0.5s ease 0.3s;
+    }
 }
 
 // DetailsBar
@@ -306,6 +470,7 @@ body {
     background-color: #022335 !important;
     font-family: $base-font-family !important;
     color: #abc0ca !important;
+    font-size: $base-font-size!important;
 }
 
 .jumbotron {
@@ -320,7 +485,7 @@ a {
     word-break: break-word;
     cursor: pointer;
     transform: translate(0, 0);
-    transition: color .5s;
+    transition: color .3s;
 }
 
 a:hover{
