@@ -2,8 +2,16 @@
 layout: default
 ---
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="container" style="display: flex;align-items: flex-start;">
+<style>
+  .timer-line{
+    width: 1px;
+    height: auto;
+    background-color: white;
+    margin: 10px 30px 10px 20px;
+  }
+</style>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting" style="height: 100%;">
+  <div class="container" style="display: flex;align-items: flex-start;height: 100%;align-items: stretch;">
     <div class="bannerbar-onmenubar">
       <div class="banner">
         {% include time.html %}
@@ -14,6 +22,7 @@ layout: default
         </div>
       </div>
     </div>
+    <div class="timer-line"></div>
     <div class="postbody">
       <h2 class="post-title-main" itemprop="name headline">{{ page.title }}</h2>
       <p class="post-meta">
