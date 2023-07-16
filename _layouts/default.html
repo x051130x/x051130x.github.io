@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 {% include head.html %}
+
 <body>
-  <div id="loading">
-    <div id="loading_bg">
-        <div class="loader">
-          <span style="font-size: 18px;">少女祈祷中....</span></br>
-          <span>Now Loading</span>
+    <div id="loading-screen" style="
+    visibility: hidden; 
+    opacity: 1.0;
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    ">
+        <div id="loading-screen-bg">
+            <div class="loader">
+                <span style="font-size: 18px;">少女祈祷中....</span></br>
+                <span>Now Loading</span>
+            </div>
         </div>
     </div>
-  </div>
-  {% include header.html %}
-  <section style="height: 100%;">
-    {{content}}
-  </section>
-  {% include footer.html %}
+    <script>
+        $('#loading-screen').css('visibility', 'visible');
+        $(document).ready(() => $('#loading-screen').css('opacity', 0.0));
+    </script>
+    {% include header.html %}
+    <section style="height: 100%;">
+        {{content}}
+    </section>
+    {% include footer.html %}
 </body>
+
 </html>

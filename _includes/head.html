@@ -1,138 +1,109 @@
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta content="{{ site.title }}" property="og:site_name">
-  {% if page.title %}
-  <meta content="{{ page.title }}" property="og:title">
-  {% else %}
-  <meta content="{{ site.title }}" property="og:title">
-  {% endif %}
-  {% if page.title %}
-  <meta content="article" property="og:type">
-  {% else %}
-  <meta content="website" property="og:type">
-  {% endif %}
-  {% if page.description %}
-  <meta content="{{ page.description | escape }}" property="og:description">
-  {% else %}
-  <meta content="{{ site.description | escape }}" property="og:description">
-  {% endif %}
-  {% if page.url %}
-  <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-  {% endif %}
-  {% if page.date %}
-  <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-  <meta content="{{ site.url }}/about/" property="article:author">
-  {% endif %}
-
-  {% if page.categories %}
-  {% for category in page.categories limit:1 %}
-  <meta content="{{ category }}" property="article:section">
-  {% endfor %}
-  {% endif %}
-
-  {% if page.tags %}
-  {% for tag in page.tags %}
-  <meta content="{{ tag }}" property="article:tag">
-  {% endfor %}
-  {% endif %}
-
-  <title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="{{ site.title }}" property="og:site_name">
     {% if page.title %}
-      {{ page.title | escape }}
+    <meta content="{{ page.title }}" property="og:title">
     {% else %}
-      {{ site.title | escape }}
+    <meta content="{{ site.title }}" property="og:title">
     {% endif %}
-  </title>
-  <meta name="description"
-    content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape }}{% else %}{{ site.description | escape }}{% endif %}">
+    {% if page.title %}
+    <meta content="article" property="og:type">
+    {% else %}
+    <meta content="website" property="og:type">
+    {% endif %}
+    {% if page.description %}
+    <meta content="{{ page.description | escape }}" property="og:description">
+    {% else %}
+    <meta content="{{ site.description | escape }}" property="og:description">
+    {% endif %}
+    {% if page.url %}
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {% endif %}
+    {% if page.date %}
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+    <meta content="{{ site.url }}/about/" property="article:author">
+    {% endif %}
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.2/dist/jquery.min.js"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/js/bootstrap.min.js"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/gh/ghiculescu/jekyll-table-of-contents/toc.js"></script>
+    {% if page.categories %}
+    {% for category in page.categories limit:1 %}
+    <meta content="{{ category }}" property="article:section">
+    {% endfor %}
+    {% endif %}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% if page.tags %}
+    {% for tag in page.tags %}
+    <meta content="{{ tag }}" property="article:tag">
+    {% endfor %}
+    {% endif %}
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.6.1/css/font-awesome.min.css"
-    crossorigin="anonymous">
+    <title>
+        {% if page.title %}
+        {{ page.title | escape }}
+        {% else %}
+        {{ site.title | escape }}
+        {% endif %}
+    </title>
+    <meta name="description"
+        content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape }}{% else %}{{ site.description | escape }}{% endif %}">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend:
-    site.baseurl | prepend: site.url }}">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.2/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ghiculescu/jekyll-table-of-contents/toc.js"></script>
 
-  <script>
-    var monthname = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    function padding(topad)
-    {
-      topad = topad.toString();
-      if (topad.length == 1)
-      {
-      topad = '0' + topad;
-      };
-      return topad;
-    };
-    function setCurrentTimeDate()
-    {
-      now = new Date();
-      $("#banner-time").html(padding(now.getHours()) + ':' + padding(now.getMinutes()) + ':' + padding(now.getSeconds()));
-      $("#banner-date").html(now.getDate() + ' ' + monthname[now.getMonth()] + ' ' + now.getFullYear());
-      setTimeout("setCurrentTimeDate()", 500);
-    }
-    $(document).ready(setCurrentTimeDate);
-  </script>
-  <script>
-  //loadingpagescript
-//  element[loading].style.display = "block"
-  document.onreadystatechange=function () {
-            if (document.readyState=="complete"){
-                 loadingFade();
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="{{ " /css/main.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.6.1/css/font-awesome.min.css"
+        crossorigin="anonymous">
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend:
+        site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <script>
+        var monthname = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        function padding(topad) {
+            topad = topad.toString();
+            if (topad.length == 1) {
+                topad = '0' + topad;
+            };
+            return topad;
+        };
+        function setCurrentTimeDate() {
+            now = new Date();
+            $("#banner-time").html(padding(now.getHours()) + ':' + padding(now.getMinutes()) + ':' + padding(now.getSeconds()));
+            $("#banner-date").html(now.getDate() + ' ' + monthname[now.getMonth()] + ' ' + now.getFullYear());
+            setTimeout("setCurrentTimeDate()", 500);
+        }
+        $(document).ready(setCurrentTimeDate);
+    </script>
+    <script>
+        function isElementInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            var elements = document.getElementsByClassName('fade-in');
+            for (var i = 0; i < elements.length; i++) {
+                if (isElementInViewport(elements[i])) {
+                    elements[i].style.opacity = 1;
+                    elements[i].style.transform = "translateX(0)";
+                }
             }
-  }
-  function loadingFade() {
-       var opacity=1;
-       //var loadingPage=document.getElementById('loading');
-       var loadingBackground=document.getElementById('loading_bg');
-       var time=setInterval(function () {
-            if (opacity<=0){
-                 clearInterval(time);
-                 //loadingPage.remove();
-                 $('#loading').remove();
-            }
-  
-            loadingBackground.style.opacity=opacity;
-            opacity-=0.4;
-       },100);
-  }
-  </script>
-  <script>
-    function isElementInViewport(element) {
-    var rect = element.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-  
-  function handleScroll() {
-    var elements = document.getElementsByClassName('fade-in');
-    for (var i = 0; i < elements.length; i++) {
-      if (isElementInViewport(elements[i])) {
-        elements[i].style.opacity = 1;
-        elements[i].style.transform = "translateX(0)";
-      }
-    }
-  }
-  
-  window.addEventListener('scroll', handleScroll);
-  </script>
-  
+        }
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
 </head>
