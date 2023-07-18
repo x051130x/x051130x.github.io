@@ -15,7 +15,7 @@ JDK 17
 
 IDEA 创建新项目，可以看见左侧侧边栏由插件提供的 Minecraft 项目。
 
-<a href="https://imgse.com/i/pSLbsQH"><img class="scalableimg" src="https://s1.ax1x.com/2023/02/19/pSLbsQH.md.png" alt="pSLbsQH.md.png" border="0"></a>
+<a href="https://imgse.com/i/pSLbsQH"><img class="img-fluid" src="https://s1.ax1x.com/2023/02/19/pSLbsQH.md.png" alt="pSLbsQH.md.png" border="0"></a>
 
 上方下拉框选择项目 SDK ，这里因为计划在 1.18.2 上跑所以选用 jdk17。
 
@@ -23,7 +23,7 @@ IDEA 创建新项目，可以看见左侧侧边栏由插件提供的 Minecraft �
 
 完成后到下一部分。
 
-<a href="https://imgse.com/i/pSLbyyd"><img class="scalableimg" src="https://s1.ax1x.com/2023/02/19/pSLbyyd.md.png" alt="pSLbyyd.md.png" border="0"></a>
+<a href="https://imgse.com/i/pSLbyyd"><img class="img-fluid" src="https://s1.ax1x.com/2023/02/19/pSLbyyd.md.png" alt="pSLbyyd.md.png" border="0"></a>
 
 Groupid 此处填写了我 web 的域名倒写
 
@@ -35,7 +35,7 @@ Version 即mod版本。
 
 Next ，转到此页面 ▽
 
-<a href="https://imgse.com/i/pSLbrSe"><img class="scalableimg" src="https://s1.ax1x.com/2023/02/19/pSLbrSe.md.png" alt="pSLbrSe.md.png" border="0"></a>
+<a href="https://imgse.com/i/pSLbrSe"><img class="img-fluid" src="https://s1.ax1x.com/2023/02/19/pSLbrSe.md.png" alt="pSLbrSe.md.png" border="0"></a>
 
 Mod Name 填写自己的 mod 名称即可。
 

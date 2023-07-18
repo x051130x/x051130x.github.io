@@ -1,29 +1,191 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-{% include head.html %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="{{ site.title }}" property="og:site_name">
+    {% if page.title %}
+    <meta content="{{ page.title }}" property="og:title">
+    {% else %}
+    <meta content="{{ site.title }}" property="og:title">
+    {% endif %}
+    {% if page.title %}
+    <meta content="article" property="og:type">
+    {% else %}
+    <meta content="website" property="og:type">
+    {% endif %}
+    {% if page.description %}
+    <meta content="{{ page.description | escape }}" property="og:description">
+    {% else %}
+    <meta content="{{ site.description | escape }}" property="og:description">
+    {% endif %}
+    {% if page.url %}
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {% endif %}
+    {% if page.date %}
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+    <meta content="{{ site.url }}/about/" property="article:author">
+    {% endif %}
+
+    {% if page.categories %}
+    {% for category in page.categories limit:1 %}
+    <meta content="{{ category }}" property="article:section">
+    {% endfor %}
+    {% endif %}
+
+    {% if page.tags %}
+    {% for tag in page.tags %}
+    <meta content="{{ tag }}" property="article:tag">
+    {% endfor %}
+    {% endif %}
+
+    <title>
+        {% if page.title %}
+        {{ page.title | escape }}
+        {% else %}
+        {{ site.title | escape }}
+        {% endif %}
+    </title>
+    <meta name="description"
+        content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape }}{% else %}{{ site.description | escape }}{% endif %}">
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend:
+        site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- Bootstrap advises me to place their JS on the end of <body>. -->
+    <script src="https://cdn.jsdelivr.net/gh/ghiculescu/jekyll-table-of-contents/toc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"
+        integrity="sha256-Nn+JGDrq3PuTxcDfJmmI0Srj5LpfOFlKqEiPwQK7y40=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{ " /css/main.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.6.1/css/font-awesome.min.css"
+        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <script>
+        function setCurrentTimeDate() {
+            $("#banner-time").text(luxon.DateTime.now().toFormat('HH:mm:ss'));
+            $("#banner-date").text(luxon.DateTime.now().setLocale('en-US').toFormat('d MMMM y'));
+            setTimeout(setCurrentTimeDate, 500);
+        }
+        $(document).ready(setCurrentTimeDate);
+    </script>
+</head>
 
 <body>
-    <div id="loading-screen" style="
-    visibility: hidden; 
-    opacity: 1.0;
-    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    ">
-        <div id="loading-screen-bg">
-            <div class="loader">
-                <span style="font-size: 18px;">少女祈祷中....</span></br>
-                <span>Now Loading</span>
+    <div class="fade-show" id="loading-screen">
+        <div class="loading-bg h-100 w-100 position-fixed z-3"></div>
+        <div class="d-flex flex-nowrap position-fixed loading-widget z-3">
+            <div>
+                <img height="120px" width="120px" src="/img/loadAnime.gif" alt="Loading animation">
+            </div>
+            <div class="ps-2">
+                <div class="fs-4">少女祈祷中....</div>
+                <div>Now Loading</div>
             </div>
         </div>
     </div>
+
     <script>
         $('#loading-screen').css('visibility', 'visible');
-        $(document).ready(() => $('#loading-screen').css('opacity', 0.0));
+        $(document).ready(() => {
+            $('#loading-screen').css('opacity', 0.0);
+            setTimeout(() => $('#loading-screen').css('display', 'none'), 1500);
+        });
     </script>
-    {% include header.html %}
-    <section style="height: 100%;">
+
+
+    <nav class="navbar sticky-top bg-body-tertiary navbar-expand">
+        <div class="container-fluid">
+            <a class="navbar-brand text-secondary" href="{{ site.baseurl }}/">HOME</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menubar-collapse"
+                aria-controls="menubar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menubar-collapse">
+                <ul class="navbar-nav me-auto align-items-center">
+                    {% for page in site.pages %}
+                    {% if page.title %}
+                    <li class="nav-item">
+                        <a href="{{ page.permalink | prepend: site.baseurl }}" class="nav-link">{{page.title}}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
         {{content}}
-    </section>
-    {% include footer.html %}
+    </div>
+
+    <div class="container-fluid d-flex flex-column align-items-center">
+        <footer class="row container-sm py-5">
+            <div class="col border-start border-3">
+                <h5>This site</h5>
+                <ul class="list-inline">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="https://github.com/x051130x/x051130x.github.io">Github repo</a></li>
+                </ul>
+            </div>
+            <div class="col border-start border-3">
+                <h5>About Me</h5>
+                <ul class="list-inline">
+                    <li><a href="https://space.bilibili.com/484869373">bilibili channel</a></li>
+                    <li><a href="https://github.com/x051130x">Github</a></li>
+                    <li><a href="https://osu.ppy.sh/users/28653211">osu! profile</a></li>
+                </ul>
+            </div>
+            <div class="col border-start border-3">
+                <h5>SCEX server</h5>
+                <ul class="list-inline">
+                    <li><a href="/scex/index.html">Home Page</a></li>
+                    <li><a href="https://play.mcmod.cn/sv20184362.html">mcmod 宣发页</a></li>
+                    <li><a href="/2022/08/19/guide.html">入服指南文档</a></li>
+                </ul>
+            </div>
+            <div class="col border-start border-3">
+                <h5>TouHou</h5>
+                <a href="https://tenco.info/game/2/account/R051130/">TH123 Tenco!</a>
+                <hr>
+                <p>
+                    安康车万同好群：<br>
+                    952480829
+                </p>
+            </div>
+            <div class="col border-start border-3 fs-8">
+                <img src="/img/HAIlogo.png" class="pb-2" style="width: 200px;" alt="HAI Logo"><br>
+                <p>
+                    Powered By Jekyll<br>
+                    This page was generated by <a href="https://www.infinityfree.net/">InfinityFree</a>.
+                </p>
+                <p>
+                    Copyright © 2023 THYuyuko_051130<br>
+                    Licensed under MIT & CC-BY-SA 4.0
+                </p>
+            </div>
+    </div>
+    <!--img src="/img/footsanae.png" style="width: 100%;margin-bottom: 30px;"-->
+    </nav>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
