@@ -1,3 +1,5 @@
+@import "bootstrap.scss";
+
 .decr-led {
     background-image: url('/img/widget-12-01-base.png');
     background-repeat: no-repeat;
@@ -15,6 +17,7 @@
 }
 
 .decr-rickhr-hr {
+    color: $primary;
     opacity: 1.0;
 }
 

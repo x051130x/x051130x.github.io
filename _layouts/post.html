@@ -3,46 +3,57 @@ layout: default
 ---
 
 <style>
-  .timer-line{
-    width: 1px;
-    height: auto;
-    background-color: white;
-    margin: 10px 30px 10px 20px;
-  }
+    .timer-line {
+        width: 1px;
+        height: auto;
+        background-color: white;
+        margin: 10px 30px 10px 20px;
+    }
 </style>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting" style="height: 100%;">
-  <div class="container" style="display: flex;align-items: flex-start;height: 100%;align-items: stretch;">
-    <div class="bannerbar-onmenubar">
-      <div class="banner">
-        {% include time.html %}
-      </div>
-      <div class="banner" style="overflow: auto; padding-bottom: 0;">
-        <div class="toc-noborder" id="table-of-contents">
-          <i>Loading...</i>
-        </div>
-      </div>
+<article class="mt-3">
+    <div class="container-lg d-flex flex-row flex-nowrap">
+            <div class="w-33 me-2 d-flex flex-column flex-nowrap sticky-lg-top align-self-start">
+                <div class="hr double-stacked">
+                    <div class="decr-tickhr-container">
+                        <hr class="decr-rickhr-hr mt-0 mb-1">
+                        <div class="decr-rulehr-tick start-33 opacity-50 vr"></div>
+                        <div class="decr-rulehr-tick end-33 opacity-50 vr"></div>
+                    </div>
+                    <div class="decr-tickhr-container">
+                        <hr class="decr-rickhr-hr m-0 opacity-33">
+                        <div class="decr-rulehr-tick start-33 opacity-50 vr"></div>
+                        <div class="decr-rulehr-tick end-33 opacity-50 vr"></div>
+                    </div>
+                </div>
+                <div class="dotted-bg p-3">
+                    {% include time.html %}
+                </div>
+                <div class="dotted-bg p-3">
+                    <div class="toc-noborder" id="table-of-contents">
+                        {% toc %}
+                    </div>
+                </div>
+            </div>
+            <div class="mx-1">
+                <div class="vr"></div>
+            </div>
+            <div class="ms-2">
+                <div class="bg-primary-subtle p-4">
+                    <h2 itemprop="name headline">{{ page.title }}</h2>
+                    <p class="post-meta">
+                        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                            {{ page.date | date: "%b %-d, %Y" }}
+                        </time>
+                        {% if page.author %} • <span itemprop="author">
+                            <span itemprop="name">
+                                {{ page.author }}
+                            </span>
+                        </span>
+                        {% endif %}
+                    </p>
+                    {{ content }}
+                </div>
+            </div>
     </div>
-    <div class="timer-line"></div>
-    <div class="postbody">
-      <h2 class="post-title-main" itemprop="name headline">{{ page.title }}</h2>
-      <p class="post-meta">
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          {{ page.date | date: "%b %-d, %Y" }}
-        </time>
-        {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name">
-            {{ page.author }}
-          </span>
-        </span>
-        {% endif %}
-      </p>
-      {{ content }}
-    </div>
-  </div>
 </article>
 
-<script type="text/javascript">
-  $(document).ready(function () {
-    $('#table-of-contents').toc({ showEffect: 'slideDown', title: '<span><i class="fa fa-list-ul" aria-hidden="true"></i> 目录：</span>' });
-  });
-</script>

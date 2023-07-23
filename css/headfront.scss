@@ -1,5 +1,6 @@
 @charset "utf-8";
-@import "globalvar.scss";
+@import "styles.scss";
+@import "utilities.scss";
 
 .headfront-text{
     transform: translateX(100px);
@@ -16,8 +17,7 @@
 }
 
 .mainpage-bg {
-    background-image: -webkit-cross-fade(url('/img/uuzbg.jpg'), $transparent-img, 70%);
-    background-image: cross-fade(url('/img/uuzbg.jpg'), $transparent-img, 70%);
+    background-image: cross-fade(70% url('/img/uuzbg.jpg'), $transparent-img);
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
