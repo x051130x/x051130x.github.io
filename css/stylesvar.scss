@@ -6,16 +6,3 @@ $primary: #99ffff;
 $secondary: #abc0ca;
 // $body-color: #0d373c;
 // $primary-bg-subtle: $body-color;
-
-
-.dotted-bg {
-    background-image: url(/img/dot.png),linear-gradient(180deg,rgba(112,186,197,.07) 0,rgba(112,186,197,.07));
-}
-
-#global-navbar {
-    height: $menubar-height;
-}
-
-.scroll-padding-navbar {
-    scroll-padding-top: calc($menubar-height + 5%);
-}

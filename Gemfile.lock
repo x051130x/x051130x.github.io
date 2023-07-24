@@ -61,6 +61,13 @@ GEM
       nokogiri (~> 1.12)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jekyll_picture_tag (2.0.4)
+      addressable (~> 2.6)
+      jekyll (~> 4.0)
+      mime-types (~> 3.0)
+      objective_elements (~> 1.1)
+      rainbow (~> 3.0)
+      ruby-vips (~> 2.0.17)
     jekyll_plugin_logger (2.1.1)
       jekyll (>= 3.5.0)
     kramdown (2.4.0)
@@ -72,8 +79,12 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2023.0218.1)
     nokogiri (1.15.3-x64-mingw-ucrt)
       racc (~> 1.4)
+    objective_elements (1.1.2)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (5.0.3)
@@ -85,6 +96,8 @@ GEM
     redcarpet (3.6.0)
     rexml (3.2.5)
     rouge (4.1.2)
+    ruby-vips (2.0.17)
+      ffi (~> 1.9)
     safe_yaml (1.0.5)
     sass-embedded (1.64.1-x64-mingw-ucrt)
       google-protobuf (~> 3.23)
@@ -105,6 +118,7 @@ DEPENDENCIES
   jekyll-spaceship
   jekyll-titles-from-headings
   jekyll-toc
+  jekyll_picture_tag
   jekyll_plugin_logger
   wdm
 

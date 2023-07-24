@@ -1,12 +1,27 @@
 ---
 --- 
-@charset "utf-8";
+
 @import "loading-screen.scss";
 @import "headfront.scss";
 @import "utilities.scss";
 @import "derocation_widgets.scss";
-@import "styles.scss";
 @import "bootstrap.scss";
+
+.scroll-padding-navbar {
+    scroll-padding-top: calc($menubar-height + 5%);
+}
+
+.sidebar-sticky-top-value {
+    top: calc($menubar-height + 1rem);
+}
+
+.dotted-bg {
+    background-image: url(/img/dot.png),linear-gradient(180deg,rgba(112,186,197,.07) 0,rgba(112,186,197,.07));
+}
+
+#global-navbar {
+    height: $menubar-height;
+}
 
 // Banners
 .banner {}
@@ -254,7 +269,8 @@ blockquote {
     color: #828282;
     background-color: #032131;
     border-left: 5px solid #828282;
-    padding-left: 0.5rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
 }
 
 .navb {
