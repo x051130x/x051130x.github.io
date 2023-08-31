@@ -33,7 +33,7 @@ $menubar-sticky-padding: 10px;
 
 @font-face {
     font-family: fontjmono;
-    src: url(/font/JetBrainsMono-Regular.ttf);
+    src: url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap);
 }
 
 //loadingpage
@@ -75,14 +75,6 @@ h1{
     border-width: 1px;
     margin-top: 30px!important;
     color: #d2f7fd!important;
-    margin-left: -80px;
-    padding-left: 80px;
-    background-image: url(/img/h1-2.svg);
-    background-size: 21px;
-    background-repeat: no-repeat;
-    background-position: 0 50%;
-    overflow: visible;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 80px 100%, 80px calc(100% - 2px), 0 calc(100% - 2px));
 }
 
 h2{
@@ -101,9 +93,6 @@ h3{
     border-width: 1px;
     margin-top: 30px!important;
     color: #d2f7fd!important;
-    background-image: url(/img/h3-6.svg);
-    background-size: 15px;
-    margin-left: -77.5px;
 }
 
 h4{
@@ -407,6 +396,7 @@ h6{
 
 .mainintro{
     @extend .banner;
+    background-image: none;
     width: 900px;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -415,6 +405,7 @@ h6{
 
 .serverstate{
     @extend .banner;
+    background-image: none;
     width: 340px;
     border-left: none;
     margin-bottom: 20px;
@@ -590,11 +581,7 @@ code{
     font-size: 14px!important;
 }
 
-blockquote{
-    color: #828282;
-    background-color: #032131;
-    border-left: 5px solid #828282;
-}
+
 
 .navb{
     color: #99ffff!important;
@@ -1654,4 +1641,55 @@ a.news-thumb:hover .corner-br {
     .col-lg-offset-12 {
         margin-left: 100%
     }
+}
+
+.background-panel hr {
+    margin: 5px 0
+}
+
+.background-panel.fade-left-right .wrapper {
+    padding: 15px;
+    background-image: url(/web/20221113065734im_/https://gb-live-assetsbucket-1qjmw3wpsvoil.s3.amazonaws.com/dreadnought_website/images/dot.png),linear-gradient(90deg,rgba(112,186,197,.1) 0,rgba(112,186,197,.24) 25%,rgba(112,186,197,.24) 75%,rgba(112,186,197,.1))
+}
+
+.background-panel.fade-left-to-right .wrapper {
+    padding: 15px;
+    background-image: url(/web/20221113065734im_/https://gb-live-assetsbucket-1qjmw3wpsvoil.s3.amazonaws.com/dreadnought_website/images/dot.png),linear-gradient(90deg,rgba(112,186,197,.15) 0,rgba(112,186,197,.07))
+}
+
+.background-panel.bottom-up .wrapper {
+    padding: 15px;
+    background-image: url(/web/20221113065734im_/https://gb-live-assetsbucket-1qjmw3wpsvoil.s3.amazonaws.com/dreadnought_website/images/dot.png),linear-gradient(180deg,rgba(112,186,197,.07) 0,rgba(112,186,197,.15))
+}
+
+.background-panel.top-down .wrapper {
+    padding: 15px;
+    background-image: url(/web/20221113065734im_/https://gb-live-assetsbucket-1qjmw3wpsvoil.s3.amazonaws.com/dreadnought_website/images/dot.png),linear-gradient(0deg,rgba(112,186,197,.07) 0,rgba(112,186,197,.15))
+}
+
+h3.media-section-name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Teko;
+    color: #6ff;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-size: 1.5rem;
+    letter-spacing: .1em
+}
+
+// changes after EXP branch started
+
+blockquote{
+    color: #dddddd;
+    border-left: 3px solid #99ffff!important;
+}
+
+blockquote strong{
+    background-image: url(/img/tip.svg);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    color: #99ffff;
+    padding-left: 30px;
 }
