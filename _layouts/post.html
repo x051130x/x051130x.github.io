@@ -2,27 +2,29 @@
 layout: default
 ---
 
-<style>
-  .timer-line{
-    width: 1px;
-    height: auto;
-    background-color: white;
-    margin: 10px 30px 10px 20px;
-  }
-</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var element = document.querySelector(".post-divider");
+    element.style.width = "100%";
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var element = document.querySelector(".post-banner");
+    element.style.maxHeight = "800px";
+    element.style.padding = "10px";
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var element = document.querySelector(".postbody");
+    element.style.transform = "translateY(0px)";
+  });
+</script>
+
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting" style="height: 100%;">
   <div class="container" style="display: flex;align-items: flex-start;height: 100%;align-items: stretch;">
-    <div class="bannerbar-onmenubar">
-      <div class="banner">
-        {% include time.html %}
-      </div>
-      <div class="banner" style="overflow: auto; padding-bottom: 0;">
-        <div class="toc-noborder" id="table-of-contents">
-          <i>Loading...</i>
-        </div>
-      </div>
-    </div>
-    <div class="timer-line"></div>
+
     <div class="postbody">
       <h2 class="post-title-main" itemprop="name headline">{{ page.title }}</h2>
       <p class="post-meta">
@@ -37,6 +39,21 @@ layout: default
         {% endif %}
       </p>
       {{ content }}
+    </div>
+    <div class="bannerbar-onmenubar">
+      {% if post.banner %}
+        <img alt="{{ post.title }}" src="{{ post.banner | prepend: site.baseurl }}" class="img-fluid" width="300">
+      {% else %}
+        <img src="/img/guide.webp" class="img-fluid" width="300" height="160" style="visibility: hidden;">
+      {% endif %}
+      <div class="post-divider"></div>
+      <div class="post-banner">
+        {% include time.html %}
+        <br>
+        <div class="toc-noborder" id="table-of-contents">
+          <i>Loading...</i>
+        </div>
+      </div>
     </div>
   </div>
 </article>
