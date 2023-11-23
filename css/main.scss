@@ -179,11 +179,11 @@ h6{
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-    color: #99ffff !important;
+    color: #03a4fb !important;
 }
 
 .navbar-default .navbar-nav>li>a:focus {
-    color: #99ffff !important;
+    color: #03a4fb !important;
 }
 
 .navbar-default .navbar-brand {
@@ -255,7 +255,7 @@ h6{
     padding-left: 10px;
     background-color: #093750;
     border-left-style: solid;
-    border-left-color: #99ffff;
+    border-left-color: #03a4fb;
     border-left-width: 1px;
     margin-bottom: 10px;
     display: flex;
@@ -408,7 +408,9 @@ h6{
 
 .mainintro{
     @extend .banner;
+    background-color: #093750;
     background-image: none;
+    border-left: #03a4fb 1px solid;
     width: 900px;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -417,6 +419,7 @@ h6{
 
 .serverstate{
     @extend .banner;
+    background-color: #093750;
     background-image: none;
     width: 340px;
     border-left: none;
@@ -498,9 +501,9 @@ h6{
 
     &:hover {
         background-color: #0a3f5c;
-        color: #99ffff !important;
+        color: #03a4fb !important;
         text-decoration: none !important;
-        border-bottom: 1px dotted #99ffff;
+        border-bottom: 1px dotted #03a4fb;
         padding-bottom: 0.5em;
         transition: 0.5s;
     }
@@ -596,7 +599,7 @@ code{
 
 
 .navb{
-    color: #99ffff!important;
+    color: #03a4fb!important;
     text-decoration: none!important;
     display: inline-block;
     text-decoration: underline;
@@ -607,19 +610,19 @@ code{
 }
 
 .navb:hover{
-    color: #99ffff!important;
+    color: #03a4fb!important;
 }
 
 .navb::before{
     text-decoration: none!important;
-    color: #99ffff!important;
+    color: #03a4fb!important;
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
     height: 4px;
-    background: #99ffff;
+    background: #03a4fb;
     z-index: -1;
     transition: width .3s;
 }
@@ -644,14 +647,14 @@ a:hover{
 
 a::before{
     text-decoration: none!important;
-    color: #99ffff!important;
+    color: #03a4fb!important;
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
     height: 100%;
-    background: #99ffff;
+    background: #03a4fb;
     z-index: -1;
     transition: width .3s;
     transition-timing-function: cubic-bezier(0.42, 0, 0.14, 1);
@@ -1694,13 +1697,13 @@ h3.media-section-name {
 
 blockquote{
     color: #dddddd;
-    border-left: 3px solid #99ffff!important;
+    border-left: 3px solid #03a4fb!important;
 }
 
 blockquote strong{
     background-image: url(/img/tip.svg);
     background-size: 25px;
     background-repeat: no-repeat;
-    color: #99ffff;
+    color: #03a4fb;
     padding-left: 30px;
 }
