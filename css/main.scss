@@ -518,7 +518,7 @@ h6{
     display: flex;
     height: 150px;
     padding: 0px;
-    background-image: url(/img/iewood.png);
+    // background-image: url(/img/iewood.png);
     &:hover{
         width: 1500px!important;
         color: #abc0ca;
@@ -537,8 +537,18 @@ h6{
     }
 }
 
+.mainintro-bg::before{
+    background-color: #03a4fb;
+    color: #03a4fb;
+    z-index: -1;
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+}
+
 .serverstate-hov-1{
-    @extend .serverstate;
+    @extend .mainintro;
+    padding: 0px;
     color: #093750;
     transition: width 0.5s ease 0.1s,color 0.2s ease 0s;
     display: flex;
@@ -552,6 +562,7 @@ h6{
 
 .serverstate-hov-2{
     @extend .serverstate-hov-1;
+    margin-right: 0px;
 }
 
 // DetailsBar
