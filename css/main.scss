@@ -196,9 +196,9 @@ h6{
     @extend .banner;
     background-image: none;
     background-color: #093750;
-    max-height: 580px;
+    max-height: calc(100%-100px);
     overflow-y: auto;
-    padding: 10px;
+    padding: 20px;
     transform: translateX(100px);
     opacity: 0;
     transition: transform 0.5s ease-out 0.7s, opacity 0.5s ease-out 0.7s;
@@ -350,7 +350,7 @@ h6{
 // Posts
 
 .postbody {
-    background-color: #093750;
+    //background-color: #093750;
     width: 850px;
     padding: 40px;
     margin-top: $menubar-sticky-padding;
