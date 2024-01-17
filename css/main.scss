@@ -196,10 +196,12 @@ h6{
     @extend .banner;
     background-image: none;
     background-color: #093750;
-    max-height: 0px;
-    overflow: hidden;
-    padding: 0px;
-    transition: max-height 0.5s ease-out 0.7s, padding 0s ease 0.7s;
+    max-height: 580px;
+    overflow-y: auto;
+    padding: 10px;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: transform 0.5s ease-out 0.7s, opacity 0.5s ease-out 0.7s;
 }
 
 // TOC
@@ -354,8 +356,9 @@ h6{
     margin-top: $menubar-sticky-padding;
     margin-bottom: $menubar-sticky-padding;
     margin-right: 10px;
-    transform: translateY(100%);
-    transition: transform 0.8s cubic-bezier(0, 0, 0, 1) 0.5s;
+    transform: translateY(200px);
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0, 0, 0, 1) 0.5s, opacity 0.8s cubic-bezier(0, 0, 0, 1) 0.5s;
 }
 
 .post-meta {
