@@ -123,7 +123,7 @@ h1{
     border-bottom: #c4c4c4;
     border-bottom-style: solid;
     border-width: 1px;
-    margin-top: 30px!important;
+    margin-top: 50px!important;
     color: #d2f7fd!important;
 }
 
@@ -132,7 +132,7 @@ h2{
     border-bottom: #828282;
     border-bottom-style: solid;
     border-width: 1px;
-    margin-top: 30px!important;
+    margin-top: 50px!important;
     color: #d2f7fd!important;
 }
 
@@ -141,12 +141,16 @@ h3{
     border-bottom: #0f5377;
     border-bottom-style: solid;
     border-width: 1px;
-    margin-top: 30px!important;
+    margin-top: 40px!important;
     color: #d2f7fd!important;
 }
 
 h4{
     @extend h3 ;
+}
+
+.mainintro h4{
+    margin: 10px!important;
 }
 
 h5{
@@ -196,7 +200,7 @@ h6{
     @extend .banner;
     background-image: none;
     background-color: #093750;
-    max-height: calc(100%-100px);
+    max-height: calc(100% - 100px);
     overflow-y: auto;
     padding: 20px;
     transform: translateX(100px);
@@ -494,6 +498,7 @@ h6{
 .serverpage-container{
     display: flex;
     justify-content: center;
+    margin-right: -20px;
 }
 
 .serverpage-content{
@@ -561,19 +566,47 @@ h6{
     z-index: 10;
 }
 
+.state-subtitle{
+    color: #093750;   
+    transition: color 0.2s ease 0.0s; 
+    overflow: visible;
+}
+
 .mainintro-hov{
     @extend .mainintro;
-    color: #093750;
-    transition: width 0.5s ease 0.1s,color 0.2s ease 0s;
+    transition: width 0.5s ease 0.1s;
     display: flex;
     height: 150px;
     padding: 0px;
-    // background-image: url(/img/iewood.png);
+    background: url(/img/jbg.webp) no-repeat right;
+    background-size: contain;
     &:hover{
         width: 1500px!important;
         color: #abc0ca;
         transition: width 0.5s ease 0s,color 0.5s ease 0.3s;
     }
+    &:hover .hid1{
+        opacity: 0;
+        margin-right: -100px;
+    }
+    
+    &::before{
+        background: none;
+    }
+}
+
+.hid1{
+    opacity: 1;
+    margin: 0px;
+    transition: opacity 0.3s ease 0s, margin 0.5s ease 0s;
+}
+
+.hid2{
+    @extend .hid1
+}
+
+.hid3{
+    @extend .hid1
 }
 
 .mainintro-bg{
@@ -581,18 +614,15 @@ h6{
     padding: 15px;
     display: flex;
     transition: background-color 0.2s ease 0s;
+    overflow: hidden;
     &:hover{
         background-color: rgba(0, 0, 0, 0.6);
         transition: background-color 0.5s ease 0.3s;
     }
-}
-
-.mainintro-bg::before{
-    background-color: #03a4fb;
-    color: #03a4fb;
-    z-index: -1;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
+    &:hover .state-subtitle{
+        color: #abc0ca;
+        transition: color 0.2s ease 0.0s;
+    }
 }
 
 .serverstate-hov-1{
@@ -603,17 +633,49 @@ h6{
     transition: width 0.5s ease 0.1s,color 0.2s ease 0s;
     display: flex;
     height: 150px;
+    background: url(/img/logbg.webp) no-repeat right;
+    background-size: contain;
     &:hover{
         width: 1500px!important;
         color: #abc0ca;
         transition: width 0.5s ease 0s,color 0.5s ease 0.3s;
     }
+    &::before{
+        background: none;
+    }
+    &:hover .hid2{
+        opacity: 0;
+        margin-right: -100px;
+    }
+    &:hover .state-subtitle{
+        color: #abc0ca;
+    }
 }
 
 .serverstate-hov-2{
-    @extend .serverstate-hov-1;
-    margin-right: 0px;
-    background-image: url(/img/mapbg.png);
+    @extend .mainintro;
+    border-left: none;
+    padding: 0px;
+    color: #093750;
+    transition: width 0.5s ease 0.1s,color 0.2s ease 0s;
+    display: flex;
+    height: 150px;
+    background-image: url(/img/mapbg.webp);
+    &:hover{
+        width: 1500px!important;
+        color: #abc0ca;
+        transition: width 0.5s ease 0s,color 0.5s ease 0.3s;
+    }
+    &::before{
+        background: none;
+    }
+    &:hover .hid3{
+        opacity: 0;
+        margin-right: -100px;
+    }
+    &:hover .state-subtitle{
+        color: #abc0ca;
+    }
 }
 
 // DetailsBar
@@ -765,7 +827,7 @@ a{
     word-break: break-word;
     cursor: pointer;
     transform: translate(0, 0);
-    transition: color .3s;
+    transition: color .15s;
 }
 
 a:hover{
@@ -783,12 +845,44 @@ a::before{
     height: 100%;
     background: #03a4fb;
     z-index: -1;
-    transition: width .3s;
+    transition: width .15s;
     transition-timing-function: cubic-bezier(0.42, 0, 0.14, 1);
 }
 
 a:hover::before {
     width: 100%;
+}
+
+.postbody a{
+    background-image: url(/img/link.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-left: 22px;
+}
+
+.reversefootnote{
+    background-image: none!important;
+    padding-left: 0!important;
+}
+
+::-webkit-scrollbar{
+    width: 10px!important;
+    height: 10px!important;
+}
+
+::-webkit-scrollbar-button{
+    display: none!important;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #093750;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #ffffff2f;
+    :hover{
+        background-color: #FFFFFFA1;
+    }
 }
 
 pre {
@@ -912,6 +1006,10 @@ code div:before {
     .sideimage{
         display: block;
     }
+}
+
+::selection{
+    background-color: #03a4fb48;
 }
 
 // from dreadnought site
