@@ -11,8 +11,13 @@
     scroll-padding-top: calc($menubar-height + 5%);
 }
 
-.sidebar-sticky-top-value {
+.sidebar-sticky-top {
     top: calc($menubar-height + 1rem);
+    height: calc(100vh - #{$menubar-height});
+}
+
+.uuz-scroll {
+    overflow-y: scroll;
 }
 
 .dotted-bg {
