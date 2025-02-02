@@ -18,7 +18,7 @@ plugins:
   - jekyll-autoprefixer
   - jekyll-titles-from-headings
   - jekyll-spaceship
-  - jekyll-liquify
+#  - jekyll-liquify
   - jekyll-feed
   - jekyll_plugin_logger
   - jekyll-toc
