@@ -12,8 +12,8 @@ layout: default
 </style>
 <article class="mt-3">
     <div class="container-lg d-flex flex-row flex-nowrap">
-        <div class="row">
-            <div class="col-lg-auto me-2 d-flex flex-column flex-nowrap flex-lg-shrink-1 sticky-lg-top sidebar-sticky-top text-wrap align-self-start uuz-scroll">
+        <div class="row uuz-lg-flex-no-wrap">
+            <div class="col-lg-3 me-2 mb-3 d-flex flex-column flex-nowrap flex-lg-shrink-1 sticky-lg-top sidebar-sticky-top text-wrap align-self-start">
                 <div class="hr double-stacked">
                     <div class="decr-tickhr-container">
                         <hr class="decr-rickhr-hr mt-0 mb-1">
@@ -26,19 +26,19 @@ layout: default
                         <div class="decr-rulehr-tick end-33 opacity-50 vr"></div>
                     </div>
                 </div>
-                <div class="dotted-bg p-3">
+                <div class="dotted-bg p-3 mb-3">
                     {% include time.html %}
                 </div>
-                <div class="dotted-bg p-3">
-                    <div class="toc-noborder" id="table-of-contents">
+                <div class="dotted-bg p-3" style="overflow: auto;">
+                    <div class="toc-noborder" id="uuz-post-toc">
                         {% toc %}
                     </div>
                 </div>
             </div>
-            <div class="col-auto mx-1 d-flex">
+            <div class="col-auto uuz-lg-show-flex px-0">
                 <div class="vr"></div>
             </div>
-            <div class="col ms-2">
+            <div class="col-lg ms-lg-2">
                 <div class="bg-primary-subtle p-4">
                     <h2 itemprop="name headline">{{ page.title }}</h2>
                     <p class="post-meta">

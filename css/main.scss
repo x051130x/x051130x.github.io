@@ -13,11 +13,20 @@
 
 .sidebar-sticky-top {
     top: calc($menubar-height + 1rem);
-    height: calc(100vh - #{$menubar-height});
+    max-height: calc(100vh - #{$menubar-height} - 1rem - $spacer);
 }
 
-.uuz-scroll {
-    overflow-y: scroll;
+.uuz-lg-show-flex {
+    display: none;
+    @include media-breakpoint-up(lg) { 
+        display: flex;
+    }
+}
+
+.uuz-lg-flex-no-wrap {
+    @include media-breakpoint-up(lg) { 
+        flex-wrap: nowrap;
+    }
 }
 
 .dotted-bg {
@@ -314,8 +323,11 @@ blockquote {
 a {
     color: #99ffff !important;
     text-decoration: none !important;
-    display: inline-block;
-    text-decoration: underline;
+
+    // They saved my life
+    // https://stackoverflow.com/a/24566951
+    display: inline table;
+
     word-break: break-word;
     cursor: pointer;
     transform: translate(0, 0);
