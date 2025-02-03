@@ -16,3 +16,9 @@ description: "「この幻想郷では常識に囚われてはいけないので
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://x051130x.github.io" # the base hostname & protocol for your site
 github_username: x051130x
+
+include:
+  - docs/_sidebar.md
+
+exclude:
+  - CNAME
