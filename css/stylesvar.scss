@@ -1,8 +1,16 @@
-$base-font-family: 'JetBrains Mono', "思源黑体 CN", "Sarasa Gothic SC", "Source Han Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size: 16px;
+$font-family-base: 'JetBrains Mono', "思源黑体 CN", "Sarasa Gothic SC", "Source Han Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-root: 16px;
 $menubar-height: 50px;
 
-$primary: #99ffff;
+$headings-color-dark: #d2f7fd;
+
+$primary: #03a4fb;
 $secondary: #abc0ca;
-// $body-color: #0d373c;
+$body-color-dark: $secondary;
+$body-bg-dark: #022335;
 // $primary-bg-subtle: $body-color;
+
+// background color for the top widget (navbar, stick-on-top things)
+.top-bg {
+    background-color: #093750;
+}

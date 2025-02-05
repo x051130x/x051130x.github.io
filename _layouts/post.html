@@ -12,33 +12,8 @@ layout: default
 </style>
 <article class="mt-3">
     <div class="container-lg d-flex flex-row flex-nowrap">
-        <div class="row uuz-lg-flex-no-wrap">
-            <div class="col-lg-3 me-2 mb-3 d-flex flex-column flex-nowrap flex-lg-shrink-1 sticky-lg-top sidebar-sticky-top text-wrap align-self-start">
-                <div class="hr double-stacked">
-                    <div class="decr-tickhr-container">
-                        <hr class="decr-rickhr-hr mt-0 mb-1">
-                        <div class="decr-rulehr-tick start-33 opacity-50 vr"></div>
-                        <div class="decr-rulehr-tick end-33 opacity-50 vr"></div>
-                    </div>
-                    <div class="decr-tickhr-container">
-                        <hr class="decr-rickhr-hr m-0 opacity-33">
-                        <div class="decr-rulehr-tick start-33 opacity-50 vr"></div>
-                        <div class="decr-rulehr-tick end-33 opacity-50 vr"></div>
-                    </div>
-                </div>
-                <div class="dotted-bg p-3 mb-3">
-                    {% include time.html %}
-                </div>
-                <div class="dotted-bg p-3" style="overflow: auto;">
-                    <div class="toc-noborder" id="uuz-post-toc">
-                        {% toc %}
-                    </div>
-                </div>
-            </div>
-            <div class="col-auto uuz-lg-show-flex px-0">
-                <div class="vr"></div>
-            </div>
-            <div class="col-lg ms-lg-2">
+        <div class="row uuz-lg-flex-no-wrap flex-wrap-reverse">
+            <div class="col-lg">
                 <div class="bg-primary-subtle p-4">
                     <h2 itemprop="name headline">{{ page.title }}</h2>
                     <p class="post-meta">
@@ -52,7 +27,48 @@ layout: default
                         </span>
                         {% endif %}
                     </p>
-                    {{ content }}
+                    <div class="postbody">
+                        <script>
+                            $(".postbody").css("opacity", "0").css("transform", "translateY(200px)");
+                            $(document).ready(() => {
+                                $(".postbody").css("opacity", "1").css("transform", "translateY(0)");
+                            });
+                        </script>
+                        {{ content }}
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3 d-flex flex-column flex-nowrap flex-lg-shrink-1 sticky-lg-top sidebar-sticky-top text-wrap align-self-start">
+                <div class="post-divider"></div>
+                <script>
+                    $(".post-divider").css("width", "0px");
+                    $(document).ready(() => {
+                        $(".post-divider").css("width", "100%");
+                    });
+                </script>
+                <div class="uuz-post-rhs-sidebar">
+                    <script>
+                        $(".uuz-post-rhs-sidebar").css("opacity", "0").css("transform", "translateX(100px)");
+                        $(document).ready(() => {
+                            $(".uuz-post-rhs-sidebar").css("opacity", "1").css("transform", "translateX(0)");
+                        });
+                    </script>
+                    <!--
+                    {% if post.banner %}
+                        <img alt="{{ post.title }}" src="{{ post.banner | prepend: site.baseurl }}" class="img-fluid" width="300">
+                    {% else %}
+                        <img src="/img/guide.webp" class="img-fluid" width="300" height="160" style="visibility: hidden;">
+                    {% endif %}
+                    -->
+                    <div class="top-bg p-3 mb-3">
+                        {% include time.html %}
+                    </div>
+                    <div class="top-bg p-3" style="overflow: auto;">
+                        <div class="toc-noborder" id="uuz-post-toc">
+                            {% toc %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

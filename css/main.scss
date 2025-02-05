@@ -2,6 +2,7 @@
 --- 
 
 @import "loading-screen.scss";
+@import "scrollbar.scss";
 @import "headfront.scss";
 @import "utilities.scss";
 @import "derocation_widgets.scss";
@@ -25,7 +26,7 @@
 
 .uuz-lg-flex-no-wrap {
     @include media-breakpoint-up(lg) { 
-        flex-wrap: nowrap;
+        flex-wrap: nowrap !important;
     }
 }
 
@@ -33,8 +34,72 @@
     background-image: url(/img/dot.png),linear-gradient(180deg,rgba(112,186,197,.07) 0,rgba(112,186,197,.07));
 }
 
+%uuz-heading {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-top: 2rem;
+    color: #d2f7fd;
+}
+
+[itemprop~="headline"] {
+    margin-top: 0;
+}
+
+h1 {
+    @extend %uuz-heading;
+    margin-top: 2.5rem;
+    border-bottom-color: #c4c4c4;
+}
+
+h2 {
+    @extend %uuz-heading;
+    margin-top: 2.5rem;
+    border-bottom-color: #828282;
+}
+
+h3, h4, h5, h6 {
+    @extend %uuz-heading;
+    border-bottom-color: #0f5377;
+}
+
 #global-navbar {
     height: $menubar-height;
+}
+
+// index.html
+
+a.uuz-post-entry {
+    display: block;
+    position: relative;
+    min-height: 100px;
+    margin-bottom: 30px;
+    transition: all .2s;
+    &:hover::before{
+        width: 0!important;
+    }
+}
+
+a.uuz-post-entry .date {
+    font-size: 11px;
+    font-size: .4rem;
+    color: #6ff;
+    text-transform: uppercase;
+}
+
+a.uuz-post-entry .headline {
+    font-size: 1.2rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fdfffe;
+    background-clip: text;
+    display: block;
+}
+
+a.uuz-post-entry .headline::hover, a.uuz-post-entry .headline::focus {
+    background: -webkit-linear-gradient(#f13304,#f13304);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
 }
 
 // Banners
@@ -51,6 +116,18 @@
 }
 
 // navbar
+.navbar a {
+    color: $body-color-dark;
+}
+
+.navbar a:hover, .navbar a:focus {
+    color: $primary;
+}
+
+.nav-item > a::before, .navbar > * > a::before {
+    height: 4px;
+    transition: width .3s;
+}
 
 // Posts
 
@@ -66,7 +143,6 @@
 .post-divider{
     background-color: #2a7ae2;
     height: 1px;
-    width: 0px;
     margin-bottom: 10px;
     transition: width 0.5s ease-out 0.5s;
 }
@@ -137,10 +213,103 @@
 
 // Serverpages
 
+.logchart{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+}
+
+.logchart caption{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.logchart th{
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 5px!important;
+}
+
+.logchart td{
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 5px!important;
+}
+
+.logchart thead tr{
+    background-color: #008fa8;
+    color: #ffffff;
+}
+
+.logchart tbody tr:nth-child(odd){
+    background-color: #474747;
+}
+
+.logchart tbody tr:nth-child(even){
+    background-color: #2e2e2e;
+}
+
+.logchart tbody tr:hover{
+    background-color: #03a4fb;
+    color: #022335;
+}
+
+.logchart tfoot tr td{
+    text-align: right;
+    padding-right: 20px;
+}
+
+.logchart{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+}
+
+.logchart caption{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.logchart th{
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 5px!important;
+}
+
+.logchart td{
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 5px!important;
+}
+
+.logchart thead tr{
+    background-color: #008fa8;
+    color: #ffffff;
+}
+
+.logchart tbody tr:nth-child(odd){
+    background-color: #474747;
+}
+
+.logchart tbody tr:nth-child(even){
+    background-color: #2e2e2e;
+}
+
+.logchart tbody tr:hover{
+    background-color: #03a4fb;
+    color: #022335;
+}
+
+.logchart tfoot tr td{
+    text-align: right;
+    padding-right: 20px;
+}
+
 .serverpage-container {
     display: flex;
     justify-content: center;
-    margin-right: -20px;
 }
 
 .serverpage-content {
@@ -155,9 +324,6 @@
 
 .mainintro {
     @extend .banner;
-    background-color: #093750;
-    background-image: none;
-    border-left: #03a4fb 1px solid;
     width: 900px;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -166,8 +332,6 @@
 
 .serverstate {
     @extend .banner;
-    background-color: #093750;
-    background-image: none;
     width: 340px;
     border-left: none;
     margin-bottom: 20px;
@@ -178,7 +342,7 @@
 .detail-btn {
     width: 75px;
     background-color: #abc0ca;
-    color: #022335;
+    color: #373737;
     padding: 3px;
     padding-bottom: 2px;
     margin-bottom: -30px;
@@ -207,6 +371,12 @@
     transition: opacity 0.5s;
     width: 450px;
     z-index: 10;
+}
+
+.state-subtitle{
+    color: #093750;   
+    transition: color 0.2s ease 0.0s; 
+    overflow: visible;
 }
 
 .mainintro-hov {
@@ -291,35 +461,7 @@
     }
 }
 
-// DetailsBar
-
-.detailsbar {
-    background-color: #093750;
-    border-left-style: solid;
-    border-left-color: #828282;
-    height: calc(20px + 1px);
-    cursor: pointer;
-    padding-left: 15px;
-
-    &:hover {
-        background-color: #0a3f5c;
-        color: #03a4fb !important;
-        text-decoration: none !important;
-        border-bottom: 1px dotted #03a4fb;
-        padding-bottom: 0.5em;
-        transition: 0.5s;
-    }
-}
-
-.detailsbar-content {
-    //border-top: transparent solid 5px;
-    background-color: #022335;
-    border-left-style: solid;
-    border-left-color: #828282;
-    padding-left: 15px;
-    width: 100%;
-    transition: height 0.2s;
-}
+// DetailsBar (nuked!)
 
 // Globals
 
@@ -332,13 +474,6 @@ td {
     padding: 0.5em;
 }
 
-body {
-    background-color: #022335 !important;
-    font-family: $base-font-family !important;
-    color: #abc0ca !important;
-    font-size: $base-font-size !important;
-}
-
 
 
 code {
@@ -347,47 +482,12 @@ code {
 
 blockquote {
     color: #828282;
-    background-color: #032131;
     border-left: 5px solid #828282;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
 }
 
-.navb {
-    color: #99ffff !important;
-    text-decoration: none !important;
-    display: inline-block;
-    text-decoration: underline;
-    word-break: break-word;
-    cursor: pointer;
-    transform: translate(0, 0);
-    transition: color .3s;
-}
-
-.navb:hover {
-    color: #99ffff !important;
-}
-
-.navb::before {
-    text-decoration: none !important;
-    color: #99ffff !important;
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 4px;
-    background: #03a4fb;
-    z-index: -1;
-    transition: width .3s;
-}
-
-.navb:hover::before {
-    width: 100%;
-}
-
 a {
-    color: #99ffff !important;
     text-decoration: none !important;
 
     // They saved my life
@@ -401,19 +501,19 @@ a {
 }
 
 a:hover {
-    color: #373737 !important;
+    color: $body-bg-dark;
 }
 
 a::before {
-    text-decoration: none !important;
-    color: #99ffff !important;
+    text-decoration: none!important;
+    color: $primary !important;
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
     height: 100%;
-    background: #03a4fb;
+    background: $primary;
     z-index: -1;
     transition: width .15s;
     transition-timing-function: cubic-bezier(0.42, 0, 0.14, 1);
@@ -423,36 +523,19 @@ a:hover::before {
     width: 100%;
 }
 
-.postbody a{
-    background-image: url(/img/link.svg);
-    background-repeat: no-repeat;
-    background-size: 20px;
-    padding-left: 22px;
+.postbody {
+    transition: transform 0.8s cubic-bezier(0, 0, 0, 1) 0.5s, opacity 0.8s cubic-bezier(0, 0, 0, 1) 0.5s;
 }
 
-.reversefootnote{
-    background-image: none!important;
-    padding-left: 0!important;
-}
+// .postbody a {
+//     background-image: url(/img/link.svg);
+//     background-repeat: no-repeat;
+//     background-size: 1.3em;
+//     padding-left: 1.4em;
+// }
 
-::-webkit-scrollbar{
-    width: 10px!important;
-    height: 10px!important;
-}
-
-::-webkit-scrollbar-button{
-    display: none!important;
-}
-
-::-webkit-scrollbar-track{
-    background-color: #093750;
-}
-
-::-webkit-scrollbar-thumb{
-    background-color: #ffffff2f;
-    :hover{
-        background-color: #FFFFFFA1;
-    }
+.uuz-post-rhs-sidebar {
+    transition: transform 0.5s ease-out 0.7s, opacity 0.5s ease-out 0.7s;
 }
 
 pre {
@@ -521,6 +604,9 @@ code div:before {
 
 }
 
+::selection{
+    background-color: #03a4fb48;
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "syntax-highlighting";
