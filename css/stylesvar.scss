@@ -14,3 +14,35 @@ $body-bg-dark: #022335;
 .top-bg {
     background-color: #093750;
 }
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/font/JetBrainsMono-Regular.woff2') format('woff2'),
+        local('JetBrains Mono');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/font/JetBrainsMono-Bold.woff2') format('woff2'),
+        local('JetBrains Mono');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/font/JetBrainsMono-Italic.woff2') format('woff2'),
+        local('JetBrains Mono');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 700;
+    src: url('/font/JetBrainsMono-BoldItalic.woff2') format('woff2'),
+        local('JetBrains Mono');
+}
