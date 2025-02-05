@@ -1,0 +1,44 @@
+// SHOULD imported after bootstrap and stylevars
+
+$all-md-blocks: (
+    "info": "🛈",
+    "warning": "⚠️",
+    "danger": "❌",
+    "success": "✅"
+);
+
+@function capitalize($string) {
+    @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}
+
+@each $block, $icon in $all-md-blocks {
+    .uuz-markdown blockquote.block-#{$block} {
+        border-color: map-get($theme-colors, $block);
+        background-color: map-get($theme-colors-bg-subtle-dark, $block);
+        color: map-get($theme-colors-text-dark, $block);
+        // padding-top: 0.5em;
+        // padding-bottom: 0.5em;
+    }
+
+    .uuz-markdown blockquote.block-#{$block}::before {
+        display: block;
+        content: "#{$icon} #{capitalize($block)}";
+        font-weight: bold;
+        margin-bottom: 0.3em;
+    }
+
+    .uuz-markdown blockquote.block-#{$block} h1,
+    .uuz-markdown blockquote.block-#{$block} h2,
+    .uuz-markdown blockquote.block-#{$block} h3,
+    .uuz-markdown blockquote.block-#{$block} h4,
+    .uuz-markdown blockquote.block-#{$block} h5,
+    .uuz-markdown blockquote.block-#{$block} h6 {
+        color: map-get($theme-colors-text, $block);
+        margin: 0px;
+        margin-bottom: 5px;
+    }
+
+    .uuz-markdown blockquote.block-#{$block} p {
+        // margin-bottom: 0px;
+    }
+}

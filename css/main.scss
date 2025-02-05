@@ -8,6 +8,8 @@
 @import "derocation_widgets.scss";
 @import "bootstrap.scss";
 
+@import "markdown.scss";
+
 .scroll-padding-navbar {
     scroll-padding-top: calc($menubar-height + 5%);
 }
