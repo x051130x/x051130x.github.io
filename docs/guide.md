@@ -1,8 +1,4 @@
----
-layout: post
-title: 入服指南 | Space Creator EX
-banner: img/guide.webp
----
+
 
 [repo]: https://github.com/x051130x/x051130x.github.io
 [chartonline]: https://docs.qq.com/sheet/DRllNandVZnhiSHpi?groupUin=CwSqoW5XsYBSZbLzoun5Xw%253D%253D&ADUIN=1161254733&ADSESSION=1671259113&ADTAG=CLIENT.QQ.5929_.0&ADPUBNO=27255&tab=BB08J2&u=de053c6228aa45629deaadc71d257d03
@@ -49,8 +45,8 @@ QQ 群聊: 362344872
 服务器的所有消息都会在此群内发布。  
 
 <!-- qq 群 QRcode -->
-<img src="{{ "/img/qrcode.webp" | prepend: site.baseurl }}" class="img-fluid">
-<br/>
+<img src="{{ "/img/qrcode.webp" | prepend: site.baseurl }}">
+<br>
 
 ### 登录验证相关
 

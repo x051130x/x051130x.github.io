@@ -63,6 +63,14 @@
     padding-bottom: 2px;
 }
 
+.post-divider{
+    background-color: #2a7ae2;
+    height: 1px;
+    width: 0px;
+    margin-bottom: 10px;
+    transition: width 0.5s ease-out 0.5s;
+}
+
 // highlightdiv
 
 .warning {
@@ -132,6 +140,7 @@
 .serverpage-container {
     display: flex;
     justify-content: center;
+    margin-right: -20px;
 }
 
 .serverpage-content {
@@ -146,6 +155,9 @@
 
 .mainintro {
     @extend .banner;
+    background-color: #093750;
+    background-image: none;
+    border-left: #03a4fb 1px solid;
     width: 900px;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -154,6 +166,8 @@
 
 .serverstate {
     @extend .banner;
+    background-color: #093750;
+    background-image: none;
     width: 340px;
     border-left: none;
     margin-bottom: 20px;
@@ -164,7 +178,7 @@
 .detail-btn {
     width: 75px;
     background-color: #abc0ca;
-    color: #373737;
+    color: #022335;
     padding: 3px;
     padding-bottom: 2px;
     margin-bottom: -30px;
@@ -207,9 +221,25 @@
         color: #abc0ca;
         transition: width 0.5s ease 0s, color 0.5s ease 0.3s;
     }
+    &:hover .hid1{
+        opacity: 0;
+        margin-right: -100px;
+    }
+    
+    &::before{
+        background: none;
+    }
 }
 
+.hid1{
+    opacity: 1;
+    margin: 0px;
+    transition: opacity 0.3s ease 0s, margin 0.5s ease 0s;
+}
 
+.hid2{
+    @extend .hid1
+}
 
 .serverstate-hov {
     @extend .serverstate;
@@ -223,12 +253,48 @@
         color: #abc0ca;
         transition: width 0.5s ease 0s, color 0.5s ease 0.3s;
     }
+    &::before{
+        background: none;
+    }
+    &:hover .hid2{
+        opacity: 0;
+        margin-right: -100px;
+    }
+    &:hover .state-subtitle{
+        color: #abc0ca;
+    }
+}
+
+.serverstate-hov-2{
+    @extend .mainintro;
+    border-left: none;
+    padding: 0px;
+    color: #093750;
+    transition: width 0.5s ease 0.1s,color 0.2s ease 0s;
+    display: flex;
+    height: 150px;
+    background-image: url(/img/mapbg.webp);
+    &:hover{
+        width: 1500px!important;
+        color: #abc0ca;
+        transition: width 0.5s ease 0s,color 0.5s ease 0.3s;
+    }
+    &::before{
+        background: none;
+    }
+    &:hover .hid3{
+        opacity: 0;
+        margin-right: -100px;
+    }
+    &:hover .state-subtitle{
+        color: #abc0ca;
+    }
 }
 
 // DetailsBar
 
 .detailsbar {
-    background-color: #0d373c;
+    background-color: #093750;
     border-left-style: solid;
     border-left-color: #828282;
     height: calc(20px + 1px);
@@ -237,9 +303,9 @@
 
     &:hover {
         background-color: #0a3f5c;
-        color: #99ffff !important;
+        color: #03a4fb !important;
         text-decoration: none !important;
-        border-bottom: 1px dotted #99ffff;
+        border-bottom: 1px dotted #03a4fb;
         padding-bottom: 0.5em;
         transition: 0.5s;
     }
@@ -247,7 +313,7 @@
 
 .detailsbar-content {
     //border-top: transparent solid 5px;
-    background-color: #373737;
+    background-color: #022335;
     border-left-style: solid;
     border-left-color: #828282;
     padding-left: 15px;
@@ -267,7 +333,7 @@ td {
 }
 
 body {
-    background-color: #373737 !important;
+    background-color: #022335 !important;
     font-family: $base-font-family !important;
     color: #abc0ca !important;
     font-size: $base-font-size !important;
@@ -311,7 +377,7 @@ blockquote {
     bottom: 0;
     width: 0;
     height: 4px;
-    background: #99ffff;
+    background: #03a4fb;
     z-index: -1;
     transition: width .3s;
 }
@@ -331,7 +397,7 @@ a {
     word-break: break-word;
     cursor: pointer;
     transform: translate(0, 0);
-    transition: color .3s;
+    transition: color .15s;
 }
 
 a:hover {
@@ -347,14 +413,46 @@ a::before {
     bottom: 0;
     width: 0;
     height: 100%;
-    background: #99ffff;
+    background: #03a4fb;
     z-index: -1;
-    transition: width .3s;
+    transition: width .15s;
     transition-timing-function: cubic-bezier(0.42, 0, 0.14, 1);
 }
 
 a:hover::before {
     width: 100%;
+}
+
+.postbody a{
+    background-image: url(/img/link.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-left: 22px;
+}
+
+.reversefootnote{
+    background-image: none!important;
+    padding-left: 0!important;
+}
+
+::-webkit-scrollbar{
+    width: 10px!important;
+    height: 10px!important;
+}
+
+::-webkit-scrollbar-button{
+    display: none!important;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #093750;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #ffffff2f;
+    :hover{
+        background-color: #FFFFFFA1;
+    }
 }
 
 pre {
